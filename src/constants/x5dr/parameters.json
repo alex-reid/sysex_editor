@@ -149,8 +149,8 @@
   },
   {
     "name": "PITCH_EG_RELEASE_TIME",
-    "enabled": false,
-    "label": "",
+    "label": "Pitch EG Release Time",
+    "enabled": true,
 
     "sysexOutParamVal": {
       "type": "single",
@@ -158,13 +158,16 @@
     },
     "dumpParamVal": {
       "type": "single",
-      "ParamNo": 0
-    }
+      "ParamNo": 25
+    },
+    "paramType": "slider",
+    "valueFrom": 0,
+    "valueTo": 99
   },
   {
     "name": "PITCH_EG_RELEASE_LEVEL",
-    "enabled": false,
-    "label": "",
+    "label": "Pitch EG Release Level",
+    "enabled": true,
 
     "sysexOutParamVal": {
       "type": "single",
@@ -172,13 +175,16 @@
     },
     "dumpParamVal": {
       "type": "single",
-      "ParamNo": 0
-    }
+      "ParamNo": 26
+    },
+    "paramType": "slider",
+    "valueFrom": -99,
+    "valueTo": 99
   },
   {
     "name": "PITCH_EG_EG_INT_BY_VEL_SENSE",
-    "enabled": false,
-    "label": "",
+    "label": "Pitch EG Intensity by Velocity Sense",
+    "enabled": true,
 
     "sysexOutParamVal": {
       "type": "single",
@@ -186,13 +192,16 @@
     },
     "dumpParamVal": {
       "type": "single",
-      "ParamNo": 0
-    }
+      "ParamNo": 28
+    },
+    "paramType": "slider",
+    "valueFrom": -99,
+    "valueTo": 99
   },
   {
     "name": "PITCH_EG_EG_TIME_BY_VEL_SENSE",
-    "enabled": false,
-    "label": "",
+    "label": "Pitch EG Time by Velocity Sense",
+    "enabled": true,
 
     "sysexOutParamVal": {
       "type": "single",
@@ -200,27 +209,59 @@
     },
     "dumpParamVal": {
       "type": "single",
-      "ParamNo": 0
-    }
+      "ParamNo": 27
+    },
+    "paramType": "slider",
+    "valueFrom": -99,
+    "valueTo": 99
   },
   {
     "name": "CUTOFF_MG_WAVE_FORM",
+    "label": "Cutoff Modulation Generator Wave Form",
     "enabled": false,
-    "label": "",
 
     "sysexOutParamVal": {
       "type": "single",
       "ParamNo": 11
     },
     "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
+      "type": "bitRange",
+      "bitFrom": 0,
+      "bitTo": 2,
+      "ParamNo": 29
+    },
+    "paramType": "select",
+    "values": [
+      {
+        "value": 0,
+        "label": "Triangle"
+      },
+      {
+        "value": 1,
+        "label": "Up Saw"
+      },
+      {
+        "value": 2,
+        "label": "Down Saw"
+      },
+      {
+        "value": 3,
+        "label": "Square 1"
+      },
+      {
+        "value": 4,
+        "label": "Random"
+      },
+      {
+        "value": 5,
+        "label": "Square 2"
+      }
+    ]
   },
   {
     "name": "CUTOFF_MG_FREQUENCY",
+    "label": "Cutoff Modulation Generator Frequency",
     "enabled": false,
-    "label": "",
 
     "sysexOutParamVal": {
       "type": "single",
@@ -228,7 +269,7 @@
     },
     "dumpParamVal": {
       "type": "single",
-      "ParamNo": 0
+      "ParamNo": 30
     }
   },
   {
@@ -270,7 +311,7 @@
     },
     "dumpParamVal": {
       "type": "single",
-      "ParamNo": 0
+      "ParamNo": 20
     }
   },
   {

@@ -1,6 +1,6 @@
-import { FUNCTION_CODE_SEND } from "./constants/x5dr";
-import InputSlider from "./components/SysexValue/InputSlider";
-import SelectDropdown from "./components/SysexValue/SelectDropdown";
+import { FUNCTION_CODE_SEND } from "../../constants/x5dr";
+import InputSlider from "../SysexValue/InputSlider";
+import SelectDropdown from "../SysexValue/SelectDropdown";
 
 interface Parameter {
   label: string;

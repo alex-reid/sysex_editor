@@ -4,30 +4,35 @@ import { MidiSetup } from "./components/MidiSetup/MidiSetup";
 import SysyexValue from "./components/SysexValue/SysexValue";
 import { FUNCTION_CODE_SEND } from "./constants/x5dr";
 import DumpRequest from "./components/SysexValue/DumpRequest";
-import { DumpedProgram } from "./DumpedProgram";
+import { DumpedProgram } from "./components/DumpedProgram/DumpedProgram";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import { ParamDisplay } from "./components/ParamDisplay/ParamDisplay";
 
 function App() {
   return (
-    <WebMidiProvider>
-      <MidiSetup />
-      <SysyexValue
-        functionCode={FUNCTION_CODE_SEND.MODE_REQUEST}
-        data={[]}
-        label="Mode Request"
-      />
-      <SysyexValue
-        functionCode={FUNCTION_CODE_SEND.MODE_CHANGE}
-        data={[0x03, 0]}
-        label="Set to Prog Edit Mode"
-      />
-      <DumpRequest
-        requestCode={FUNCTION_CODE_SEND.PROGRAM_PARAMETER_DUMP_REQUEST}
-        receiveCode={FUNCTION_CODE_SEND.PROGRAM_PARAMETER_DUMP}
-        label="Parameter Dump Request"
-      />
-      <DumpedProgram />
+    <Provider store={store}>
+      <WebMidiProvider>
+        <MidiSetup />
+        <SysyexValue
+          functionCode={FUNCTION_CODE_SEND.MODE_REQUEST}
+          data={[]}
+          label="Mode Request"
+        />
+        <SysyexValue
+          functionCode={FUNCTION_CODE_SEND.MODE_CHANGE}
+          data={[0x03, 0]}
+          label="Set to Prog Edit Mode"
+        />
+        <DumpRequest
+          requestCode={FUNCTION_CODE_SEND.PROGRAM_PARAMETER_DUMP_REQUEST}
+          receiveCode={FUNCTION_CODE_SEND.PROGRAM_PARAMETER_DUMP}
+          label="Parameter Dump Request"
+        />
+        <DumpedProgram />
+        <ParamDisplay />
 
-      {/* <DumpRequest
+        {/* <DumpRequest
         requestCode={FUNCTION_CODE_SEND.ALL_DATA_DUMP_REQUEST}
         receiveCode={FUNCTION_CODE_SEND.ALL_DATA_DUMP}
         data={[0x00]}
@@ -61,7 +66,8 @@ function App() {
         type="slider"
       />
      */}
-    </WebMidiProvider>
+      </WebMidiProvider>
+    </Provider>
   );
 }
 
