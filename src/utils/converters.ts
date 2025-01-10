@@ -1,3 +1,5 @@
+import { MAX_PARAMETER_VALUE } from "../constants/x5dr/midiinfo";
+
 // split parameter value into two 7 bit values and return as an array
 const splitValInto7bitArray = (parameter: number | null) => {
   if (!parameter) {
@@ -16,4 +18,15 @@ const unpackByte = (byte: number): boolean[] => {
   return Array.from({ length: 8 }, (_, i) => getBit(byte, i));
 };
 
-export { splitValInto7bitArray, getBit, unpackByte };
+const paramChangeSysexMessage = (parameter: number | null, value: number) => {
+  let outputValue = value;
+  if (outputValue < 0) {
+    outputValue += MAX_PARAMETER_VALUE;
+  }
+  return [
+    ...splitValInto7bitArray(parameter || 0),
+    ...splitValInto7bitArray(outputValue),
+  ];
+};
+
+export { splitValInto7bitArray, getBit, unpackByte, paramChangeSysexMessage };

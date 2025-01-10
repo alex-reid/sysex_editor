@@ -5,6 +5,7 @@ import SysyexValue from "./components/SysexValue/SysexValue";
 import { FUNCTION_CODE_SEND } from "./constants/x5dr";
 import DumpRequest from "./components/SysexValue/DumpRequest";
 import { DumpedProgram } from "./DumpedProgram";
+import Zustand from "./components/zustand/Zustand";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         label="Parameter Dump Request"
       />
       <DumpedProgram />
+      <Zustand />
 
       {/* <DumpRequest
         requestCode={FUNCTION_CODE_SEND.ALL_DATA_DUMP_REQUEST}

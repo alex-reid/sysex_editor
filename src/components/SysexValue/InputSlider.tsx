@@ -1,68 +1,66 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useWebMidi } from "../../contexts/webmidi";
-import { splitValInto7bitArray } from "../../utils/converters";
-import { MAX_PARAMETER_VALUE } from "../../constants/x5dr/midiinfo";
+import { paramChangeSysexMessage } from "../../utils/converters";
+import useStore from "../../store/store";
 
 const InputSlider = ({
   functionCode,
-  label,
-  parameter = null,
-  lowValue = 0,
-  highValue = 99,
-  initValue = 0,
+  id,
 }: {
   functionCode: number;
-  label: string;
-  parameter?: number | null;
-  lowValue?: number;
-  highValue?: number;
-  initValue?: number;
+  id: number;
 }) => {
   const { sendSysexMessage } = useWebMidi();
-  const [value, setValue] = useState(initValue);
   const timeoutRef = useRef(setTimeout(() => {}, 0));
+  const { setParameterValue } = useStore((state) => state);
+  const params = useStore((state) =>
+    state.programParameters.find((p) => p.id === id)
+  );
 
-  useEffect(() => {
+  if (!params) {
+    return null;
+  }
+
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setParameterValue(id, parseInt(e.target.value, 10));
+
     clearTimeout(timeoutRef.current);
 
     timeoutRef.current = setTimeout(() => {
-      let outputValue = value;
-      if (outputValue < 0) {
-        outputValue += MAX_PARAMETER_VALUE;
-      }
-      console.log("sent", outputValue);
-      sendSysexMessage(functionCode, [
-        ...splitValInto7bitArray(parameter),
-        ...splitValInto7bitArray(outputValue),
-      ])
+      sendSysexMessage(
+        functionCode,
+        paramChangeSysexMessage(
+          params.sysexOutParamVal.ParamNo,
+          parseInt(e.target.value, 10)
+        )
+      )
         .then(() => {
-          // console.log(data);
+          // console.log("value sent", data);
         })
         .catch((error) => {
           console.error(error);
         });
     }, 30);
-
-    return () => clearTimeout(timeoutRef.current);
-  }, [value, functionCode, parameter, sendSysexMessage]);
-
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(parseInt(e.target.value, 10));
   };
 
   return (
     <div>
       <label>
-        {label}
+        {params.label}
         <br />
         <input
           type="range"
-          min={lowValue}
-          max={highValue}
+          min={params.valueFrom}
+          max={params.valueTo}
           onChange={handleSliderChange}
-          value={value}
+          value={params.parameterValue}
         />
-        <input type="number" value={value} readOnly style={{ width: "2rem" }} />
+        <input
+          type="number"
+          value={params.parameterValue}
+          readOnly
+          style={{ width: "2rem" }}
+        />
       </label>
     </div>
   );
