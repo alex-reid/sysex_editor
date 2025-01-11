@@ -42,10 +42,13 @@ export interface ProgramConfig {
 export interface ProgramSlice {
   programParameters: ProgramParameters[];
   programConfig?: ProgramConfig;
+  programParameterSysexDump: number[];
   addProgramParamater: (parameter: ProgramParameters) => void;
   loadFromJSON: (json: ProgramParameterJson[]) => void;
   getParameterById: (id: number) => ProgramParameters | undefined;
   setParameterValue: (id: number, value: number) => void;
+  setParameterActive: (id: number, active: boolean) => void;
+  setAllParametersActive: (active: boolean) => void;
 }
 
 export const createProgramSlice: StateCreator<ProgramSlice, []> = (
@@ -57,6 +60,7 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
     type: "program",
     functionCode: 0x41,
   },
+  programParameterSysexDump: [],
   addProgramParamater: (parameter: ProgramParameters) =>
     set((state) => ({
       programParameters: [...state.programParameters, parameter],
@@ -110,6 +114,27 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
       };
       const updatedParameters = [...state.programParameters];
       updatedParameters[index] = updatedParameter;
+      return { programParameters: updatedParameters };
+    });
+  },
+  setParameterActive: (id: number, active: boolean) => {
+    set((state) => {
+      const index = state.programParameters.findIndex((p) => p.id === id);
+      const updatedParameter = {
+        ...state.programParameters[index],
+        active: active,
+      };
+      const updatedParameters = [...state.programParameters];
+      updatedParameters[index] = updatedParameter;
+      return { programParameters: updatedParameters };
+    });
+  },
+  setAllParametersActive: (active: boolean) => {
+    set((state) => {
+      const updatedParameters = state.programParameters.map((p) => ({
+        ...p,
+        active: active,
+      }));
       return { programParameters: updatedParameters };
     });
   },

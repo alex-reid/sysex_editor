@@ -26,21 +26,23 @@ const InputSlider = ({
 
     clearTimeout(timeoutRef.current);
 
-    timeoutRef.current = setTimeout(() => {
-      sendSysexMessage(
-        functionCode,
-        paramChangeSysexMessage(
-          params.sysexOutParamVal.ParamNo,
-          parseInt(e.target.value, 10)
+    if (params.active) {
+      timeoutRef.current = setTimeout(() => {
+        sendSysexMessage(
+          functionCode,
+          paramChangeSysexMessage(
+            params.sysexOutParamVal.ParamNo,
+            parseInt(e.target.value, 10)
+          )
         )
-      )
-        .then(() => {
-          // console.log("value sent", data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }, 30);
+          .then(() => {
+            console.log(params.name, "sent");
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }, 30);
+    }
   };
 
   return (

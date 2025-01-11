@@ -17,11 +17,14 @@ function ProgramParams() {
 
 function LoadFromJSON() {
   const loadFromJSON = useStore((state) => state.loadFromJSON);
-  return (
-    <button onClick={() => loadFromJSON(parameters as ProgramParameterJson[])}>
-      Load from JSON
-    </button>
+  const setAllParametersActive = useStore(
+    (state) => state.setAllParametersActive
   );
+  const handleLoad = () => {
+    loadFromJSON(parameters as ProgramParameterJson[]);
+    setAllParametersActive(true);
+  };
+  return <button onClick={handleLoad}>Load from JSON</button>;
 }
 
 const Zustand = () => {
