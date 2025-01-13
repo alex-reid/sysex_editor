@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { ProgramSlice, createProgramSlice } from "./ProgramSlice";
+import { ConfigSlice, createConfigSlice } from "./ConfigSlice";
 
 /*
 Blueprints for the store
@@ -16,10 +17,12 @@ store
   |  |- parameters
   |- effects
   |  |- parameters
+  |- config
 */
 
-const useStore = create<ProgramSlice>()((...a) => ({
+const useStore = create<ProgramSlice & ConfigSlice>()((...a) => ({
   ...createProgramSlice(...a),
+  ...createConfigSlice(...a),
   // combination: createCombiSlice(...a),
   // drumKit: createDrumKitSlice(...a),
   // multi: createMultiSlice(...a),

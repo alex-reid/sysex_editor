@@ -61,7 +61,7 @@ const InputSlider = ({
           type="number"
           value={params.parameterValue}
           readOnly
-          style={{ width: "2rem" }}
+          style={{ maxWidth: "2rem" }}
         />
       </label>
     </div>

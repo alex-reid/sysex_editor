@@ -28,7 +28,7 @@ const SysyexValue = ({
       value,
       0,
     ])
-      .then((data) => {
+      .then(() => {
         console.log("recieved", randomValue);
 
         // console.log(data);
@@ -48,7 +48,7 @@ const SysyexValue = ({
       ...splitValInto7bitArray(parameter),
       ...splitValInto7bitArray(value),
     ])
-      .then((data) => {
+      .then(() => {
         // console.log(data);
         console.log("recieved", randomValue);
       })

@@ -1,7 +1,8 @@
 import { ProgramParameterJson } from "../../store/ProgramSlice";
 import useStore from "../../store/store";
-import parameters from "../../constants/x5dr/parameters.json";
+import x5dr from "../../constants/x5dr/parameters.json";
 import { ParamList } from "./ParamList";
+import { useEffect } from "react";
 
 function ProgramParams() {
   const programConfig = useStore((state) => state.programConfig);
@@ -15,24 +16,32 @@ function ProgramParams() {
   );
 }
 
-function LoadFromJSON() {
+const Zustand = () => {
   const loadFromJSON = useStore((state) => state.loadFromJSON);
   const setAllParametersActive = useStore(
     (state) => state.setAllParametersActive
   );
   const handleLoad = () => {
-    loadFromJSON(parameters as ProgramParameterJson[]);
+    loadFromJSON(x5dr.parameters as ProgramParameterJson[], x5dr.constants);
     setAllParametersActive(true);
   };
-  return <button onClick={handleLoad}>Load from JSON</button>;
-}
+  useEffect(() => {
+    handleLoad();
+  });
 
-const Zustand = () => {
   return (
     <div>
-      <p>Test parameters:</p>
-      <ProgramParams />
-      <LoadFromJSON />
+      <p>Parameters:</p>
+      <div
+        style={{
+          display: "grid",
+          // grid auto coloumns with min width of 250px
+          gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+          gap: "1rem",
+        }}
+      >
+        <ProgramParams />
+      </div>
     </div>
   );
 };

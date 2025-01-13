@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import useStore from "../../store/store";
 
 // Define the type for the function getDataFromSysexMessage
 type GetDataFromSysexMessage = (sysexMessage: number[]) => number[];
@@ -7,13 +8,20 @@ type GetDataFromSysexMessage = (sysexMessage: number[]) => number[];
 type UseLoadDumpDataReturnType = [number[] | null, GetDataFromSysexMessage];
 
 const useLoadDumpData = (): UseLoadDumpDataReturnType => {
+  const setProgramParameterSysexDump = useStore(
+    (state) => state.setProgramParameterSysexDump
+  );
   const [dumpData, setDumpData] = useState<number[] | null>(null);
-  const getDataFromSysexMessage = useCallback((sysexMessage: number[]) => {
-    const data = sysexMessage.slice(5, sysexMessage.length - 1);
-    const extractedData = process7BitData(data);
-    setDumpData(extractedData);
-    return extractedData;
-  }, []);
+  const getDataFromSysexMessage = useCallback(
+    (sysexMessage: number[]) => {
+      const data = sysexMessage.slice(5, sysexMessage.length - 1);
+      const extractedData = process7BitData(data);
+      setDumpData(extractedData);
+      setProgramParameterSysexDump(extractedData);
+      return extractedData;
+    },
+    [setProgramParameterSysexDump]
+  );
   return [dumpData, getDataFromSysexMessage];
 };
 

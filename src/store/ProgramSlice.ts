@@ -1,4 +1,5 @@
 import { StateCreator } from "zustand";
+import { ConfigJson } from "./ConfigSlice";
 
 export interface ProgramParameterJson {
   name: string;
@@ -10,19 +11,18 @@ export interface ProgramParameterJson {
     ParamNo: number;
   };
   dumpParamVal: {
-    type: "single" | "singleBit" | "bitRange";
+    type: "single" | "double" | "singleBit" | "bitRange";
     bitNo?: number;
     bitStart?: number;
     bitEnd?: number;
     ParamNo: number;
   };
   paramType: "select" | "slider";
-  values?: [
-    {
-      value: number;
-      label: string;
-    }
-  ];
+  values?: {
+    value: number;
+    label: string;
+  }[];
+  valuesConstant?: string;
   valueFrom?: number;
   valueTo?: number;
   defaultParameterValue: number;
@@ -44,11 +44,15 @@ export interface ProgramSlice {
   programConfig?: ProgramConfig;
   programParameterSysexDump: number[];
   addProgramParamater: (parameter: ProgramParameters) => void;
-  loadFromJSON: (json: ProgramParameterJson[]) => void;
+  loadFromJSON: (
+    json: ProgramParameterJson[],
+    constants: ConfigJson["constants"]
+  ) => void;
   getParameterById: (id: number) => ProgramParameters | undefined;
   setParameterValue: (id: number, value: number) => void;
   setParameterActive: (id: number, active: boolean) => void;
   setAllParametersActive: (active: boolean) => void;
+  setProgramParameterSysexDump: (dump: number[]) => void;
 }
 
 export const createProgramSlice: StateCreator<ProgramSlice, []> = (
@@ -65,7 +69,10 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
     set((state) => ({
       programParameters: [...state.programParameters, parameter],
     })),
-  loadFromJSON: (json) => {
+  loadFromJSON: (json, constants: ConfigJson["constants"]) => {
+    set(() => ({
+      programParameters: [],
+    }));
     // recursively flatten out any children
     const flatJson: ProgramParameterJson[] = [];
 
@@ -87,8 +94,6 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
 
     flattenParameters(json);
 
-    console.log(flatJson);
-
     flatJson.forEach((parameter: ProgramParameterJson, index) => {
       const p = {
         ...parameter,
@@ -96,6 +101,9 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
         active: false,
         parameterValue: parameter.defaultParameterValue || 0,
       };
+      if (p.paramType === "select" && p.valuesConstant) {
+        p.values = constants[p.valuesConstant];
+      }
       if (parameter.enabled)
         set((state) => ({
           programParameters: [...state.programParameters, p],
@@ -136,6 +144,41 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
         active: active,
       }));
       return { programParameters: updatedParameters };
+    });
+  },
+  setProgramParameterSysexDump: (dump: number[]) => {
+    set({ programParameterSysexDump: dump });
+    if (dump.length === 0) return;
+    if (get().programParameters.length === 0) return;
+    get().programParameters.forEach((p) => {
+      const dumpParam = p.dumpParamVal;
+      if (!dumpParam) return p;
+      let dumpValue = 0;
+      switch (dumpParam.type) {
+        case "single":
+          dumpValue = dump[dumpParam.ParamNo];
+          if ((dumpValue & 0x80) > 0) {
+            dumpValue = dumpValue - 0x100;
+          }
+          break;
+        case "double":
+          dumpValue =
+            dump[dumpParam.ParamNo] + dump[dumpParam.ParamNo + 1] * 256;
+          break;
+        case "singleBit":
+          dumpValue =
+            (dump[dumpParam.ParamNo] & (1 << dumpParam.bitNo!)) >>
+            dumpParam.bitNo!;
+          break;
+        case "bitRange":
+          dumpValue =
+            (dump[dumpParam.ParamNo] &
+              ((1 << (dumpParam.bitEnd! + 1)) - (1 << dumpParam.bitStart!))) >>
+            dumpParam.bitStart!;
+          console.log(p.name, dumpValue, dump[dumpParam.ParamNo]);
+          break;
+      }
+      get().setParameterValue(p.id, dumpValue);
     });
   },
 });

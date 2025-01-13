@@ -1,2211 +1,4012 @@
-[
-  {
-    "name": "OSC_MODE",
-    "label": "Oscillator Mode",
-    "enabled": true,
+{
+  "parameters": [
+    {
+      "name": "OSC_MODE",
+      "label": "Oscillator Mode",
+      "enabled": true,
 
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 0
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 10
+      },
+      "paramType": "select",
+      "values": [
+        {
+          "value": 0,
+          "label": "Single"
+        },
+        {
+          "value": 1,
+          "label": "Double"
+        },
+        {
+          "value": 2,
+          "label": "Drums"
+        }
+      ]
     },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 10
+    {
+      "name": "ASSIGN",
+      "label": "Voice Assign Mode",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 1
+      },
+      "dumpParamVal": {
+        "type": "singleBit",
+        "bitNo": 0,
+        "ParamNo": 11
+      },
+      "paramType": "select",
+      "values": [
+        {
+          "value": 0,
+          "label": "Poly"
+        },
+        {
+          "value": 1,
+          "label": "Mono"
+        }
+      ]
     },
-    "paramType": "select",
-    "values": [
+    {
+      "name": "HOLD",
+      "label": "Hold Mode",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 2
+      },
+      "dumpParamVal": {
+        "type": "singleBit",
+        "bitNo": 1,
+        "ParamNo": 11
+      },
+      "paramType": "select",
+      "values": [
+        {
+          "value": 0,
+          "label": "Off"
+        },
+        {
+          "value": 1,
+          "label": "On"
+        }
+      ]
+    },
+    {
+      "name": "PITCH_EG_START_LEVEL",
+      "label": "Pitch EG Start Level",
+      "enabled": true,
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 3
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 21
+      },
+      "paramType": "slider",
+      "valueFrom": -99,
+      "valueTo": 99
+    },
+    {
+      "name": "PITCH_EG_ATTACK_TIME",
+      "label": "Pitch EG Attack Time",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 4
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 22
+      },
+      "paramType": "slider",
+      "valueFrom": 0,
+      "valueTo": 99
+    },
+    {
+      "name": "PITCH_EG_ATTACK_LEVEL",
+      "label": "Pitch EG Attack Level",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 5
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 23
+      },
+      "paramType": "slider",
+      "valueFrom": -99,
+      "valueTo": 99
+    },
+    {
+      "name": "PITCH_EG_DECAY_TIME",
+      "label": "Pitch EG Decay Time",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 6
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 24
+      },
+      "paramType": "slider",
+      "valueFrom": 0,
+      "valueTo": 99
+    },
+    {
+      "name": "PITCH_EG_RELEASE_TIME",
+      "label": "Pitch EG Release Time",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 7
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 25
+      },
+      "paramType": "slider",
+      "valueFrom": 0,
+      "valueTo": 99
+    },
+    {
+      "name": "PITCH_EG_RELEASE_LEVEL",
+      "label": "Pitch EG Release Level",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 8
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 26
+      },
+      "paramType": "slider",
+      "valueFrom": -99,
+      "valueTo": 99
+    },
+    {
+      "name": "PITCH_EG_EG_INT_BY_VEL_SENSE",
+      "label": "Pitch EG Intensity by Velocity Sense",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 9
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 28
+      },
+      "paramType": "slider",
+      "valueFrom": -99,
+      "valueTo": 99
+    },
+    {
+      "name": "PITCH_EG_EG_TIME_BY_VEL_SENSE",
+      "label": "Pitch EG Time by Velocity Sense",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 10
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 27
+      },
+      "paramType": "slider",
+      "valueFrom": -99,
+      "valueTo": 99
+    },
+    {
+      "name": "CUTOFF_MG_WAVE_FORM",
+      "label": "Cutoff Modulation Generator Wave Form",
+      "enabled": true,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 11
+      },
+      "dumpParamVal": {
+        "type": "bitRange",
+        "bitStart": 0,
+        "bitEnd": 2,
+        "ParamNo": 29
+      },
+      "paramType": "select",
+      "values": [
+        {
+          "value": 0,
+          "label": "Triangle"
+        },
+        {
+          "value": 1,
+          "label": "Up Saw"
+        },
+        {
+          "value": 2,
+          "label": "Down Saw"
+        },
+        {
+          "value": 3,
+          "label": "Square 1"
+        },
+        {
+          "value": 4,
+          "label": "Random"
+        },
+        {
+          "value": 5,
+          "label": "Square 2"
+        }
+      ]
+    },
+    {
+      "name": "CUTOFF_MG_FREQUENCY",
+      "label": "Cutoff Modulation Generator Frequency",
+      "enabled": false,
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 12
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 30
+      }
+    },
+    {
+      "name": "CUTOFF_MG_INTENSITY",
+      "enabled": false,
+      "label": "",
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 13
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "CUTOFF_MG_DELAY",
+      "enabled": false,
+      "label": "",
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 14
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "CUTOFF_MG_OSC_SELECT",
+      "enabled": true,
+      "label": "Cutoff Modulation Osc Select",
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 15
+      },
+      "dumpParamVal": {
+        "type": "bitRange",
+        "bitStart": 5,
+        "bitEnd": 6,
+        "ParamNo": 29
+      },
+      "paramType": "select",
+      "values": [
+        {
+          "value": 0,
+          "label": "Off"
+        },
+        {
+          "value": 1,
+          "label": "Osc 1"
+        },
+        {
+          "value": 2,
+          "label": "Osc 2"
+        },
+        {
+          "value": 3,
+          "label": "Both"
+        }
+      ]
+    },
+    {
+      "name": "CUTOFF_MG_KEY_SYNC",
+      "enabled": true,
+      "label": "Cutoff Modulation Key Sync",
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 16
+      },
+      "dumpParamVal": {
+        "type": "singleBit",
+        "bitNo": 7,
+        "ParamNo": 29
+      },
+      "paramType": "select",
+      "values": [
+        {
+          "value": 0,
+          "label": "Off"
+        },
+        {
+          "value": 1,
+          "label": "On"
+        }
+      ]
+    },
+    {
+      "name": "AT_PITCH_BEND_RANGE",
+      "enabled": false,
+      "label": "",
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 17
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "AT_VDF_CUTOFF",
+      "enabled": false,
+      "label": "",
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 18
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "AT_VDF_MG_INT",
+      "enabled": false,
+      "label": "",
+
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 19
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "AT_VDA_AMPLITUDE",
+      "enabled": false,
+      "label": "",
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 20
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "BW_MW_VDF_MG_INT",
+      "enabled": false,
+      "label": "",
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 21
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "BW_MW_PITCH_BEND_RANGE",
+      "enabled": false,
+      "label": "",
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 22
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "BW_MW_VDF_SWEEP_INT",
+      "enabled": false,
+      "label": "",
+      "sysexOutParamVal": {
+        "type": "single",
+        "ParamNo": 23
+      },
+      "dumpParamVal": {
+        "type": "single",
+        "ParamNo": 0
+      }
+    },
+    {
+      "name": "VOICE_1",
+      "label": "Voice 1",
+      "children": [
+        {
+          "name": "OSC",
+          "label": "Oscillator",
+          "children": [
+            {
+              "name": "MULTISOUND",
+              "enabled": true,
+              "label": "Multisound Waveform",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 24
+              },
+              "dumpParamVal": {
+                "type": "double",
+                "ParamNo": 12
+              },
+              "paramType": "select",
+              "valuesConstant": "multisoundNames"
+            },
+            {
+              "name": "LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 25
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "OCTAVE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 26
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_EG_INT",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 27
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "A_B_PAN",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 28
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "SEND_C_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 29
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "SEND_D_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 30
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_WAVE_FORM",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 78
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_FREQUENCY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 79
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_INTENSITY_2",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 80
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_DELAY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 81
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_PADE_IN",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 82
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_KEY_SYNC",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 83
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_FREQ_MOD_BY_KBD_TRACK",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 84
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_FREQ_MOD_BY_AT_M_WHEEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 85
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_INTENSITY_MOD_BY_AT",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 86
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_INTENSITY_MOD_BY_M_WHEEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 87
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "VDF",
+          "label": "Filter",
+          "children": [
+            {
+              "name": "CUTOFF_VALUE",
+              "label": "Cutoff Value",
+              "enabled": true,
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 31
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 50
+              },
+              "paramType": "slider",
+              "valueFrom": 0,
+              "valueTo": 99
+            },
+            {
+              "name": "EG_INTENSITY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 32
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "COL_INTENSITY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 33
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "COL_INT_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 34
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 35
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_ATTACK_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 36
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 37
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_BREAK_POINT",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 38
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 39
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_SUSTAIN_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 40
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 41
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_RELEASE_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 42
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_EG_INT_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 43
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_EG_TIME_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 44
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 45
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 46
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 47
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 48
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_KBD_TRACK_KEY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 49
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_MODE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 50
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_CUTOFF",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 51
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_EG_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 52
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRAK_TIME_MOD_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 53
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRAK_TIME_MOD_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 54
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRAK_TIME_MOD_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 55
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRAK_TIME_MOD_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 56
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "VDA",
+          "label": "Amplifier",
+          "children": [
+            {
+              "name": "EG_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 57
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_ATTACK_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 58
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 59
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_BREAK_POINT",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 60
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 61
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_SUSTAIN_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 62
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 63
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_EG_INT_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 64
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_EG_TIME_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 65
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 66
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 67
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 68
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 69
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_KBD_TRACK_KEY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 70
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_MODE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 71
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_INTENSITY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 72
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_EG_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 73
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_KBD_TRACK_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 74
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_KBD_TRACK_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 75
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_KBD_TRACK_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 76
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_KBD_TRACK_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 77
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VOICE_2",
+      "label": "Voice 2",
+      "children": [
+        {
+          "name": "OSC",
+          "label": "Oscillator",
+          "children": [
+            {
+              "name": "INTERVAL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 88
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "DETUNE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 89
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "DELAY_START",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 90
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "MULTISOUND",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 91
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 92
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "OCTAVE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 93
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_EG_INT",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 94
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "A_B_PAN",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 95
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "SEND_C_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 96
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "SEND_D_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 97
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_WAVE_FORM",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 145
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_FREQUENCY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 146
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_INTENSITY_2",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 147
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_DELAY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 148
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_PADE_IN",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 149
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_KEY_SYNC",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 150
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_FREQ_MOD_BY_KBD_TRACK",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 151
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_FREQ_MOD_BY_AT_M_WHEEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 152
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_INTENSITY_MOD_BY_AT",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 153
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "PITCH_MG_INTENSITY_MOD_BY_M_WHEEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 154
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "VDF",
+          "label": "Filter",
+          "children": [
+            {
+              "name": "CUTOFF_VALUE",
+              "label": "Cutoff Value",
+              "enabled": true,
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 98
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 97
+              },
+              "paramType": "slider",
+              "valueFrom": 0,
+              "valueTo": 99
+            },
+            {
+              "name": "EG_INTENSITY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 99
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "COL_INTENSITY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 100
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "COL_INT_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 101
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 102
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_ATTACK_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 103
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 104
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_BREAK_POINT",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 105
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 106
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_SUSTAIN_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 107
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 108
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_RELEASE_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 109
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_EG_INT_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 110
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_EG_TIME_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 111
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 112
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 113
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 114
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 115
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_KBD_TRACK_KEY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 116
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_MODE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 117
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_CUTOFF",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 118
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_EG_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 119
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRAK_TIME_MOD_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 120
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRAK_TIME_MOD_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 121
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRAK_TIME_MOD_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 122
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRAK_TIME_MOD_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 123
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "VDA",
+          "label": "Amplifier",
+          "children": [
+            {
+              "name": "EG_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 124
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_ATTACK_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 125
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 126
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_BREAK_POINT",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 127
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 128
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_SUSTAIN_LEVEL",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 129
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 130
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_EG_INT_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 131
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_EG_TIME_BY_VEL_SENSE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 132
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 133
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 134
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 135
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 136
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_KBD_TRACK_KEY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 137
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_MODE",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 138
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_INTENSITY",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 139
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "KBD_TRACK_EG_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 140
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_KBD_TRACK_ATTACK_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 141
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_KBD_TRACK_DECAY_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 142
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_KBD_TRACK_SLOPE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 143
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            },
+            {
+              "name": "EG_TIME_MOD_KBD_TRACK_RELEASE_TIME",
+              "enabled": false,
+              "label": "",
+              "sysexOutParamVal": {
+                "type": "single",
+                "ParamNo": 144
+              },
+              "dumpParamVal": {
+                "type": "single",
+                "ParamNo": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EFFECTS",
+      "label": "Effects",
+      "children": [
+        {
+          "name": "EFFECT_1_TYPE",
+          "label": "Effect 1 Type",
+          "enabled": true,
+          "sysexOutParamVal": {
+            "type": "single",
+            "ParamNo": 155
+          },
+          "dumpParamVal": {
+            "type": "single",
+            "ParamNo": 135
+          },
+          "paramType": "select",
+          "values": [
+            { "value": 0, "label": "No Effect" },
+            { "value": 1, "label": "Hall" },
+            { "value": 2, "label": "Ensemble Hall" },
+            { "value": 3, "label": "Concert Hall" },
+            { "value": 4, "label": "Room" },
+            { "value": 5, "label": "Large Room" },
+            { "value": 6, "label": "Live Stage" },
+            { "value": 7, "label": "Wet Plate" },
+            { "value": 8, "label": "Dry Plate" },
+            { "value": 9, "label": "Spring Reverb" },
+            { "value": 10, "label": "Early Reflection 1" },
+            { "value": 11, "label": "Early Reflection 2" },
+            { "value": 12, "label": "Early Reflection 3" },
+            { "value": 13, "label": "Stereo Delay" },
+            { "value": 14, "label": "Cross Delay" },
+            { "value": 15, "label": "Dual Mono Delay" },
+            { "value": 16, "label": "Multi Tap Delay 1" },
+            { "value": 17, "label": "Multi Tap Delay 2" },
+            { "value": 18, "label": "Multi Tap Delay 3" },
+            { "value": 19, "label": "Stereo Chorus 1" },
+            { "value": 20, "label": "Stereo Chorus 2" },
+            { "value": 21, "label": "Quadrature Chorus" },
+            { "value": 22, "label": "Cross Over Chorus" },
+            { "value": 23, "label": "Harmonic Chorus" },
+            { "value": 24, "label": "Symphonic Ensemble" },
+            { "value": 25, "label": "Flanger 1" },
+            { "value": 26, "label": "Flanger 2" },
+            { "value": 27, "label": "Cross Over Flanger" },
+            { "value": 28, "label": "Exciter" },
+            { "value": 29, "label": "Enhancer" },
+            { "value": 30, "label": "Distortion" },
+            { "value": 31, "label": "Over Drive" },
+            { "value": 32, "label": "Stereo Phaser 1" },
+            { "value": 33, "label": "Stereo Phaser 2" },
+            { "value": 34, "label": "Rotary Speaker" },
+            { "value": 35, "label": "Auto Pan" },
+            { "value": 36, "label": "Tremolo" },
+            { "value": 37, "label": "Parametric EQ" },
+            { "value": 38, "label": "Chorus-Delay" },
+            { "value": 39, "label": "Flanger-Delay" },
+            { "value": 40, "label": "Delay / Hall" },
+            { "value": 41, "label": "Delay / Room" },
+            { "value": 42, "label": "Delay / Chorus" },
+            { "value": 43, "label": "Delay / Flanger" },
+            { "value": 44, "label": "Delay / Distortion" },
+            { "value": 45, "label": "Delay / Over Drive" },
+            { "value": 46, "label": "Delay / Phaser" },
+            { "value": 47, "label": "Delay / Rotary Speaker" }
+          ]
+        }
+      ]
+    }
+  ],
+  "constants": {
+    "multisoundNames": [
       {
         "value": 0,
-        "label": "Single"
+        "label": "A.Piano 1"
       },
       {
         "value": 1,
-        "label": "Double"
+        "label": "A.Piano1LP"
       },
       {
         "value": 2,
-        "label": "Drums"
-      }
-    ]
-  },
-  {
-    "name": "ASSIGN",
-    "label": "Voice Assign Mode",
-    "enabled": true,
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 1
-    },
-    "dumpParamVal": {
-      "type": "singleBit",
-      "bitNo": 0,
-      "ParamNo": 11
-    },
-    "paramType": "select",
-    "values": [
-      {
-        "value": 0,
-        "label": "Poly"
+        "label": "A.Piano 2"
       },
       {
-        "value": 1,
-        "label": "Mono"
-      }
-    ]
-  },
-  {
-    "name": "HOLD",
-    "label": "Hold Mode",
-    "enabled": true,
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 2
-    },
-    "dumpParamVal": {
-      "type": "singleBit",
-      "bitNo": 1,
-      "ParamNo": 11
-    },
-    "paramType": "select",
-    "values": [
-      {
-        "value": 0,
-        "label": "Off"
+        "value": 3,
+        "label": "E.Piano 1"
       },
       {
-        "value": 1,
-        "label": "On"
-      }
-    ]
-  },
-  {
-    "name": "PITCH_EG_START_LEVEL",
-    "label": "Pitch EG Start Level",
-    "enabled": true,
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 3
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 21
-    },
-    "paramType": "slider",
-    "valueFrom": -99,
-    "valueTo": 99
-  },
-  {
-    "name": "PITCH_EG_ATTACK_TIME",
-    "label": "Pitch EG Attack Time",
-    "enabled": true,
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 4
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 22
-    },
-    "paramType": "slider",
-    "valueFrom": 0,
-    "valueTo": 99
-  },
-  {
-    "name": "PITCH_EG_ATTACK_LEVEL",
-    "label": "Pitch EG Attack Level",
-    "enabled": true,
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 5
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 23
-    },
-    "paramType": "slider",
-    "valueFrom": -99,
-    "valueTo": 99
-  },
-  {
-    "name": "PITCH_EG_DECAY_TIME",
-    "label": "Pitch EG Decay Time",
-    "enabled": true,
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 6
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 24
-    },
-    "paramType": "slider",
-    "valueFrom": 0,
-    "valueTo": 99
-  },
-  {
-    "name": "PITCH_EG_RELEASE_TIME",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 7
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "PITCH_EG_RELEASE_LEVEL",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 8
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "PITCH_EG_EG_INT_BY_VEL_SENSE",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 9
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "PITCH_EG_EG_TIME_BY_VEL_SENSE",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 10
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "CUTOFF_MG_WAVE_FORM",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 11
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "CUTOFF_MG_FREQUENCY",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 12
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "CUTOFF_MG_INTENSITY",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 13
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "CUTOFF_MG_DELAY",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 14
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "CUTOFF_MG_OSC_SELECT",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 15
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "CUTOFF_MG_KEY_SYNC",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 16
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "AT_PITCH_BEND_RANGE",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 17
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "AT_VDF_CUTOFF",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 18
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "AT_VDF_MG_INT",
-    "enabled": false,
-    "label": "",
-
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 19
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "AT_VDA_AMPLITUDE",
-    "enabled": false,
-    "label": "",
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 20
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "BW_MW_VDF_MG_INT",
-    "enabled": false,
-    "label": "",
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 21
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "BW_MW_PITCH_BEND_RANGE",
-    "enabled": false,
-    "label": "",
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 22
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "BW_MW_VDF_SWEEP_INT",
-    "enabled": false,
-    "label": "",
-    "sysexOutParamVal": {
-      "type": "single",
-      "ParamNo": 23
-    },
-    "dumpParamVal": {
-      "type": "single",
-      "ParamNo": 0
-    }
-  },
-  {
-    "name": "VOICE_1",
-    "label": "Voice 1",
-    "children": [
-      {
-        "name": "OSC",
-        "label": "Oscillator",
-        "children": [
-          {
-            "name": "MULTISOUND",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 24
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 25
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "OCTAVE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 26
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_EG_INT",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 27
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "A_B_PAN",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 28
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "SEND_C_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 29
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "SEND_D_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 30
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_WAVE_FORM",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 78
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_FREQUENCY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 79
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_INTENSITY_2",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 80
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_DELAY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 81
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_PADE_IN",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 82
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_KEY_SYNC",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 83
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_FREQ_MOD_BY_KBD_TRACK",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 84
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_FREQ_MOD_BY_AT_M_WHEEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 85
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_INTENSITY_MOD_BY_AT",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 86
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_INTENSITY_MOD_BY_M_WHEEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 87
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          }
-        ]
+        "value": 4,
+        "label": "E.Piano1LP"
       },
       {
-        "name": "VDF",
-        "label": "Filter",
-        "children": [
-          {
-            "name": "CUTOFF_VALUE",
-            "label": "Cutoff Value",
-            "enabled": true,
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 31
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 50
-            },
-            "paramType": "slider",
-            "valueFrom": 0,
-            "valueTo": 99
-          },
-          {
-            "name": "EG_INTENSITY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 32
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "COL_INTENSITY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 33
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "COL_INT_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 34
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 35
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_ATTACK_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 36
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 37
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_BREAK_POINT",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 38
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 39
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_SUSTAIN_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 40
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 41
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_RELEASE_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 42
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_EG_INT_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 43
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_EG_TIME_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 44
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 45
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 46
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 47
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 48
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_KBD_TRACK_KEY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 49
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_MODE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 50
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_CUTOFF",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 51
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_EG_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 52
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRAK_TIME_MOD_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 53
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRAK_TIME_MOD_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 54
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRAK_TIME_MOD_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 55
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRAK_TIME_MOD_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 56
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          }
-        ]
+        "value": 5,
+        "label": "E.Piano 2"
       },
       {
-        "name": "VDA",
-        "label": "Amplifier",
-        "children": [
-          {
-            "name": "EG_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 57
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_ATTACK_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 58
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 59
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_BREAK_POINT",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 60
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 61
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_SUSTAIN_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 62
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 63
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_EG_INT_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 64
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_EG_TIME_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 65
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 66
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 67
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 68
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 69
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_KBD_TRACK_KEY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 70
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_MODE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 71
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_INTENSITY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 72
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_EG_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 73
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_KBD_TRACK_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 74
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_KBD_TRACK_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 75
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_KBD_TRACK_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 76
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_KBD_TRACK_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 77
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "VOICE_2",
-    "label": "Voice 2",
-    "children": [
-      {
-        "name": "OSC",
-        "label": "Oscillator",
-        "children": [
-          {
-            "name": "INTERVAL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 88
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "DETUNE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 89
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "DELAY_START",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 90
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "MULTISOUND",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 91
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 92
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "OCTAVE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 93
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_EG_INT",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 94
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "A_B_PAN",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 95
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "SEND_C_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 96
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "SEND_D_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 97
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_WAVE_FORM",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 145
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_FREQUENCY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 146
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_INTENSITY_2",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 147
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_DELAY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 148
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_PADE_IN",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 149
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_KEY_SYNC",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 150
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_FREQ_MOD_BY_KBD_TRACK",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 151
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_FREQ_MOD_BY_AT_M_WHEEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 152
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_INTENSITY_MOD_BY_AT",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 153
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "PITCH_MG_INTENSITY_MOD_BY_M_WHEEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 154
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          }
-        ]
+        "value": 6,
+        "label": "E.Piano2LP"
       },
       {
-        "name": "VDF",
-        "label": "Filter",
-        "children": [
-          {
-            "name": "CUTOFF_VALUE",
-            "label": "Cutoff Value",
-            "enabled": true,
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 98
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 97
-            },
-            "paramType": "slider",
-            "valueFrom": 0,
-            "valueTo": 99
-          },
-          {
-            "name": "EG_INTENSITY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 99
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "COL_INTENSITY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 100
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "COL_INT_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 101
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 102
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_ATTACK_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 103
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 104
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_BREAK_POINT",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 105
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 106
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_SUSTAIN_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 107
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 108
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_RELEASE_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 109
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_EG_INT_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 110
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_EG_TIME_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 111
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 112
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 113
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 114
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 115
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_KBD_TRACK_KEY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 116
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_MODE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 117
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_CUTOFF",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 118
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_EG_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 119
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRAK_TIME_MOD_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 120
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRAK_TIME_MOD_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 121
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRAK_TIME_MOD_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 122
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRAK_TIME_MOD_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 123
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          }
-        ]
+        "value": 7,
+        "label": "Soft EP"
       },
       {
-        "name": "VDA",
-        "label": "Amplifier",
-        "children": [
-          {
-            "name": "EG_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 124
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_ATTACK_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 125
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 126
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_BREAK_POINT",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 127
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 128
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_SUSTAIN_LEVEL",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 129
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 130
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_EG_INT_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 131
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_EG_TIME_BY_VEL_SENSE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 132
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 133
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 134
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 135
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 136
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_KBD_TRACK_KEY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 137
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_MODE",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 138
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_INTENSITY",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 139
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "KBD_TRACK_EG_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 140
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_KBD_TRACK_ATTACK_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 141
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_KBD_TRACK_DECAY_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 142
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_KBD_TRACK_SLOPE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 143
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          },
-          {
-            "name": "EG_TIME_MOD_KBD_TRACK_RELEASE_TIME",
-            "enabled": false,
-            "label": "",
-            "sysexOutParamVal": {
-              "type": "single",
-              "ParamNo": 144
-            },
-            "dumpParamVal": {
-              "type": "single",
-              "ParamNo": 0
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "EFFECTS",
-    "label": "Effects",
-    "children": [
+        "value": 8,
+        "label": "Soft EP LP "
+      },
       {
-        "name": "EFFECT_1_TYPE",
-        "label": "Effect 1 Type",
-        "enabled": true,
-        "sysexOutParamVal": {
-          "type": "single",
-          "ParamNo": 155
-        },
-        "dumpParamVal": {
-          "type": "single",
-          "ParamNo": 135
-        },
-        "paramType": "select",
-        "values": [
-          { "value": 0, "label": "No Effect" },
-          { "value": 1, "label": "Hall" },
-          { "value": 2, "label": "Ensemble Hall" },
-          { "value": 3, "label": "Concert Hall" },
-          { "value": 4, "label": "Room" },
-          { "value": 5, "label": "Large Room" },
-          { "value": 6, "label": "Live Stage" },
-          { "value": 7, "label": "Wet Plate" },
-          { "value": 8, "label": "Dry Plate" },
-          { "value": 9, "label": "Spring Reverb" },
-          { "value": 10, "label": "Early Reflection 1" },
-          { "value": 11, "label": "Early Reflection 2" },
-          { "value": 12, "label": "Early Reflection 3" },
-          { "value": 13, "label": "Stereo Delay" },
-          { "value": 14, "label": "Cross Delay" },
-          { "value": 15, "label": "Dual Mono Delay" },
-          { "value": 16, "label": "Multi Tap Delay 1" },
-          { "value": 17, "label": "Multi Tap Delay 2" },
-          { "value": 18, "label": "Multi Tap Delay 3" },
-          { "value": 19, "label": "Stereo Chorus 1" },
-          { "value": 20, "label": "Stereo Chorus 2" },
-          { "value": 21, "label": "Quadrature Chorus" },
-          { "value": 22, "label": "Cross Over Chorus" },
-          { "value": 23, "label": "Harmonic Chorus" },
-          { "value": 24, "label": "Symphonic Ensemble" },
-          { "value": 25, "label": "Flanger 1" },
-          { "value": 26, "label": "Flanger 2" },
-          { "value": 27, "label": "Cross Over Flanger" },
-          { "value": 28, "label": "Exciter" },
-          { "value": 29, "label": "Enhancer" },
-          { "value": 30, "label": "Distortion" },
-          { "value": 31, "label": "Over Drive" },
-          { "value": 32, "label": "Stereo Phaser 1" },
-          { "value": 33, "label": "Stereo Phaser 2" },
-          { "value": 34, "label": "Rotary Speaker" },
-          { "value": 35, "label": "Auto Pan" },
-          { "value": 36, "label": "Tremolo" },
-          { "value": 37, "label": "Parametric EQ" },
-          { "value": 38, "label": "Chorus-Delay" },
-          { "value": 39, "label": "Flanger-Delay" },
-          { "value": 40, "label": "Delay / Hall" },
-          { "value": 41, "label": "Delay / Room" },
-          { "value": 42, "label": "Delay / Chorus" },
-          { "value": 43, "label": "Delay / Flanger" },
-          { "value": 44, "label": "Delay / Distortion" },
-          { "value": 45, "label": "Delay / Over Drive" },
-          { "value": 46, "label": "Delay / Phaser" },
-          { "value": 47, "label": "Delay / Rotary Speaker" }
-        ]
+        "value": 9,
+        "label": "Hard EP"
+      },
+      {
+        "value": 10,
+        "label": "Hard EP LP "
+      },
+      {
+        "value": 11,
+        "label": "PianoPad 1 "
+      },
+      {
+        "value": 12,
+        "label": "PianoPad 2 "
+      },
+      {
+        "value": 13,
+        "label": "Clav"
+      },
+      {
+        "value": 14,
+        "label": "Clav LP"
+      },
+      {
+        "value": 15,
+        "label": "Harpsicord"
+      },
+      {
+        "value": 16,
+        "label": "HarpsicdLP"
+      },
+      {
+        "value": 17,
+        "label": "PercOrgan1"
+      },
+      {
+        "value": 18,
+        "label": "PercOrg1LP"
+      },
+      {
+        "value": 19,
+        "label": "PercOrgan2"
+      },
+      {
+        "value": 20,
+        "label": "PercOrg2LP"
+      },
+      {
+        "value": 21,
+        "label": "Organ 1"
+      },
+      {
+        "value": 22,
+        "label": "Organ 1 LP"
+      },
+      {
+        "value": 23,
+        "label": "Organ 2"
+      },
+      {
+        "value": 24,
+        "label": "Organ 2 LP"
+      },
+      {
+        "value": 25,
+        "label": "Organ 3"
+      },
+      {
+        "value": 26,
+        "label": "Organ 4"
+      },
+      {
+        "value": 27,
+        "label": "Organ 5"
+      },
+      {
+        "value": 28,
+        "label": "RotaryOrg1"
+      },
+      {
+        "value": 29,
+        "label": "RotaryOrg2"
+      },
+      {
+        "value": 30,
+        "label": "PipeOrgani"
+      },
+      {
+        "value": 31,
+        "label": "PipeOrg1LP"
+      },
+      {
+        "value": 32,
+        "label": "PipeOrgan2"
+      },
+      {
+        "value": 33,
+        "label": "PipeOrg2LP"
+      },
+      {
+        "value": 34,
+        "label": "PipeOrgan3"
+      },
+      {
+        "value": 35,
+        "label": "PipeOrg3LP"
+      },
+      {
+        "value": 36,
+        "label": "Musette"
+      },
+      {
+        "value": 37,
+        "label": "Musette V "
+      },
+      {
+        "value": 38,
+        "label": "Bandneon "
+      },
+      {
+        "value": 39,
+        "label": "BandneonlLP "
+      },
+      {
+        "value": 40,
+        "label": "Accordion "
+      },
+      {
+        "value": 41,
+        "label": "AcordionLP "
+      },
+      {
+        "value": 42,
+        "label": "Harmonica "
+      },
+      {
+        "value": 43,
+        "label": "G.Guitar "
+      },
+      {
+        "value": 44,
+        "label": "G.GuitarLP "
+      },
+      {
+        "value": 45,
+        "label": "F.Guitar"
+      },
+      {
+        "value": 46,
+        "label": "F.GuitarLP "
+      },
+      {
+        "value": 47,
+        "label": "F.Guitar V "
+      },
+      {
+        "value": 48,
+        "label": "A.Gtr Harm "
+      },
+      {
+        "value": 49,
+        "label": "E.Guitar 1 "
+      },
+      {
+        "value": 50,
+        "label": "E.Guitr1 V "
+      },
+      {
+        "value": 51,
+        "label": "E.Guitar 2 "
+      },
+      {
+        "value": 52,
+        "label": "E.Guitar 3 "
+      },
+      {
+        "value": 53,
+        "label": "MuteGuitar"
+      },
+      {
+        "value": 54,
+        "label": "Funky Gtr "
+      },
+      {
+        "value": 55,
+        "label": "FunkyGtr V "
+      },
+      {
+        "value": 56,
+        "label": "E.Gtr Harm "
+      },
+      {
+        "value": 57,
+        "label": "DistGuitar "
+      },
+      {
+        "value": 58,
+        "label": "Dist GtrLP "
+      },
+      {
+        "value": 59,
+        "label": "DistGuitrVv "
+      },
+      {
+        "value": 60,
+        "label": "Over Drive "
+      },
+      {
+        "value": 61,
+        "label": "OverDrv LP"
+      },
+      {
+        "value": 62,
+        "label": "OverDrv F4 "
+      },
+      {
+        "value": 63,
+        "label": "MuteDstGtr"
+      },
+      {
+        "value": 64,
+        "label": "MtDstGtr V "
+      },
+      {
+        "value": 65,
+        "label": "PowerChord "
+      },
+      {
+        "value": 66,
+        "label": "PowerChd V "
+      },
+      {
+        "value": 67,
+        "label": "OverDvChrd "
+      },
+      {
+        "value": 68,
+        "label": "Gtr Slide "
+      },
+      {
+        "value": 69,
+        "label": "GtrSlide V. "
+      },
+      {
+        "value": 70,
+        "label": "Sitar 1"
+      },
+      {
+        "value": 71,
+        "label": "Sitar 2"
+      },
+      {
+        "value": 72,
+        "label": "Sitar 2 LP "
+      },
+      {
+        "value": 73,
+        "label": "Santur"
+      },
+      {
+        "value": 74,
+        "label": "Bouzouki "
+      },
+      {
+        "value": 75,
+        "label": "BouzoukiLP "
+      },
+      {
+        "value": 76,
+        "label": "Banjoe"
+      },
+      {
+        "value": 77,
+        "label": "Shamisen "
+      },
+      {
+        "value": 78,
+        "label": "Koto"
+      },
+      {
+        "value": 79,
+        "label": "Uood"
+      },
+      {
+        "value": 80,
+        "label": "Harp"
+      },
+      {
+        "value": 81,
+        "label": "MandlinTrm "
+      },
+      {
+        "value": 82,
+        "label": "ABass 1 "
+      },
+      {
+        "value": 83,
+        "label": "A.Bass1 LP "
+      },
+      {
+        "value": 84,
+        "label": "A.Bass 2 "
+      },
+      {
+        "value": 85,
+        "label": "A.Bass2 LP "
+      },
+      {
+        "value": 86,
+        "label": "E.Bass 1 "
+      },
+      {
+        "value": 87,
+        "label": "E.Bass1 LP "
+      },
+      {
+        "value": 88,
+        "label": "E.Bass 2 "
+      },
+      {
+        "value": 89,
+        "label": "E.Bass2 LP "
+      },
+      {
+        "value": 90,
+        "label": "Pick Bass1"
+      },
+      {
+        "value": 91,
+        "label": "PicBass1LP"
+      },
+      {
+        "value": 92,
+        "label": "Pick Bass2"
+      },
+      {
+        "value": 93,
+        "label": "Fretless"
+      },
+      {
+        "value": 94,
+        "label": "FretlessLP"
+      },
+      {
+        "value": 95,
+        "label": "Slap Bass1"
+      },
+      {
+        "value": 96,
+        "label": "Slap Bass2"
+      },
+      {
+        "value": 97,
+        "label": "SlpBass2LP"
+      },
+      {
+        "value": 98,
+        "label": "Slap Bass3"
+      },
+      {
+        "value": 99,
+        "label": "SynthBass1"
+      },
+      {
+        "value": 100,
+        "label": "SynBass1LP"
+      },
+      {
+        "value": 101,
+        "label": "SynthBass2 "
+      },
+      {
+        "value": 102,
+        "label": "SynBass2LP "
+      },
+      {
+        "value": 103,
+        "label": "House Bass "
+      },
+      {
+        "value": 104,
+        "label": "FM Bass "
+      },
+      {
+        "value": 105,
+        "label": "FM Bass LP "
+      },
+      {
+        "value": 106,
+        "label": "Kalimba "
+      },
+      {
+        "value": 107,
+        "label": "Music Box "
+      },
+      {
+        "value": 108,
+        "label": "MusicBoxLP "
+      },
+      {
+        "value": 109,
+        "label": "Log Drum "
+      },
+      {
+        "value": 110,
+        "label": "Marimba "
+      },
+      {
+        "value": 111,
+        "label": "Xylophone "
+      },
+      {
+        "value": 112,
+        "label": "Vibe"
+      },
+      {
+        "value": 113,
+        "label": "Celesta "
+      },
+      {
+        "value": 114,
+        "label": "Glocken "
+      },
+      {
+        "value": 115,
+        "label": "BrightBell "
+      },
+      {
+        "value": 116,
+        "label": "B.Bell LP "
+      },
+      {
+        "value": 117,
+        "label": "Metal Bell "
+      },
+      {
+        "value": 118,
+        "label": "M.Bell LP"
+      },
+      {
+        "value": 119,
+        "label": "Gamelan"
+      },
+      {
+        "value": 120,
+        "label": "Pole"
+      },
+      {
+        "value": 121,
+        "label": "Pole LP"
+      },
+      {
+        "value": 122,
+        "label": "Tubular"
+      },
+      {
+        "value": 123,
+        "label": "Split Drum"
+      },
+      {
+        "value": 124,
+        "label": "Split Bell"
+      },
+      {
+        "value": 125,
+        "label": "Fiute"
+      },
+      {
+        "value": 126,
+        "label": "Pan Flute"
+      },
+      {
+        "value": 127,
+        "label": "PanFluteLP"
+      },
+      {
+        "value": 128,
+        "label": "Shakuhachi"
+      },
+      {
+        "value": 129,
+        "label": "ShakhachLP"
+      },
+      {
+        "value": 130,
+        "label": "Bottle"
+      },
+      {
+        "value": 131,
+        "label": "Recorder"
+      },
+      {
+        "value": 132,
+        "label": "Ocarina"
+      },
+      {
+        "value": 133,
+        "label": "Oboe"
+      },
+      {
+        "value": 134,
+        "label": "EnglishHrn"
+      },
+      {
+        "value": 135,
+        "label": "Eng.HornLP"
+      },
+      {
+        "value": 136,
+        "label": "BasoonOboe "
+      },
+      {
+        "value": 137,
+        "label": "BsonOboelP "
+      },
+      {
+        "value": 138,
+        "label": "Clarinet"
+      },
+      {
+        "value": 139,
+        "label": "ClarinetLP"
+      },
+      {
+        "value": 140,
+        "label": "Bari Sax"
+      },
+      {
+        "value": 141,
+        "label": "Bari.SaxLP"
+      },
+      {
+        "value": 142,
+        "label": "Tenor Sax"
+      },
+      {
+        "value": 143,
+        "label": "T.Sax LP"
+      },
+      {
+        "value": 144,
+        "label": "Alto Sax"
+      },
+      {
+        "value": 145,
+        "label": "A.Sax LP "
+      },
+      {
+        "value": 146,
+        "label": "SopranoSax "
+      },
+      {
+        "value": 147,
+        "label": "S.Sax LP "
+      },
+      {
+        "value": 148,
+        "label": "Tuba"
+      },
+      {
+        "value": 149,
+        "label": "Tuba LP "
+      },
+      {
+        "value": 150,
+        "label": "Horn"
+      },
+      {
+        "value": 151,
+        "label": "FlugelHorn"
+      },
+      {
+        "value": 152,
+        "label": "Trombone 1"
+      },
+      {
+        "value": 153,
+        "label": "Trombone 2 "
+      },
+      {
+        "value": 154,
+        "label": "Trumpet "
+      },
+      {
+        "value": 155,
+        "label": "Trumpet LP "
+      },
+      {
+        "value": 156,
+        "label": "Mute TP "
+      },
+      {
+        "value": 157,
+        "label": "Mute TP LP "
+      },
+      {
+        "value": 158,
+        "label": "Brass 1 "
+      },
+      {
+        "value": 159,
+        "label": "Brass 1 LP "
+      },
+      {
+        "value": 160,
+        "label": "Brass 2 "
+      },
+      {
+        "value": 161,
+        "label": "Brass 2 LP"
+      },
+      {
+        "value": 162,
+        "label": "StringEns. "
+      },
+      {
+        "value": 163,
+        "label": "StrEns. V1 "
+      },
+      {
+        "value": 164,
+        "label": "StrEns. V2 "
+      },
+      {
+        "value": 165,
+        "label": "StrEns. V3 "
+      },
+      {
+        "value": 166,
+        "label": "AnaStrings "
+      },
+      {
+        "value": 167,
+        "label": "PWM"
+      },
+      {
+        "value": 168,
+        "label": "Violin"
+      },
+      {
+        "value": 169,
+        "label": "Cello"
+      },
+      {
+        "value": 170,
+        "label": "Cello LP"
+      },
+      {
+        "value": 171,
+        "label": "Pizzicato"
+      },
+      {
+        "value": 172,
+        "label": "Voice"
+      },
+      {
+        "value": 173,
+        "label": "Choir"
+      },
+      {
+        "value": 174,
+        "label": "Soft Choir"
+      },
+      {
+        "value": 175,
+        "label": "Air Vox"
+      },
+      {
+        "value": 176,
+        "label": "Doo Voice"
+      },
+      {
+        "value": 177,
+        "label": "DooVoicelP"
+      },
+      {
+        "value": 178,
+        "label": "Syn Vox"
+      },
+      {
+        "value": 179,
+        "label": "Syn Vox LP"
+      },
+      {
+        "value": 180,
+        "label": "White Pad"
+      },
+      {
+        "value": 181,
+        "label": "Ether Bell"
+      },
+      {
+        "value": 182,
+        "label": "E.Bell LP"
+      },
+      {
+        "value": 183,
+        "label": "Mega Pad"
+      },
+      {
+        "value": 184,
+        "label": "Spectrum 1 "
+      },
+      {
+        "value": 185,
+        "label": "Spectrum 2 "
+      },
+      {
+        "value": 186,
+        "label": "Stadium "
+      },
+      {
+        "value": 187,
+        "label": "Stadium NT "
+      },
+      {
+        "value": 188,
+        "label": "BrushNoise "
+      },
+      {
+        "value": 189,
+        "label": "BruNoiseNT"
+      },
+      {
+        "value": 190,
+        "label": "Steel Drum "
+      },
+      {
+        "value": 191,
+        "label": "SteelDrmLP"
+      },
+      {
+        "value": 192,
+        "label": "BrushSwirl "
+      },
+      {
+        "value": 193,
+        "label": "Belitree "
+      },
+      {
+        "value": 194,
+        "label": "BelltreeNT "
+      },
+      {
+        "value": 195,
+        "label": "BeltreV NT "
+      },
+      {
+        "value": 196,
+        "label": "Tri Roll "
+      },
+      {
+        "value": 197,
+        "label": "TriRoll NT "
+      },
+      {
+        "value": 198,
+        "label": "Telephon"
+      },
+      {
+        "value": 199,
+        "label": "TelephonNT"
+      },
+      {
+        "value": 200,
+        "label": "Clicker"
+      },
+      {
+        "value": 201,
+        "label": "Clicker NT"
+      },
+      {
+        "value": 202,
+        "label": "Crickets 1"
+      },
+      {
+        "value": 203,
+        "label": "CricktsINT"
+      },
+      {
+        "value": 204,
+        "label": "Crickets 2 "
+      },
+      {
+        "value": 205,
+        "label": "Crickts2NT"
+      },
+      {
+        "value": 206,
+        "label": "Magic Bell"
+      },
+      {
+        "value": 207,
+        "label": "Sporing "
+      },
+      {
+        "value": 208,
+        "label": "Rattle"
+      },
+      {
+        "value": 209,
+        "label": "Kava 1"
+      },
+      {
+        "value": 210,
+        "label": "Kava 2 "
+      },
+      {
+        "value": 211,
+        "label": "Fever 1 "
+      },
+      {
+        "value": 212,
+        "label": "Fever 2 "
+      },
+      {
+        "value": 213,
+        "label": "Zappers 1 "
+      },
+      {
+        "value": 214,
+        "label": "Zappers 2 "
+      },
+      {
+        "value": 215,
+        "label": "Bugs"
+      },
+      {
+        "value": 216,
+        "label": "Surfy"
+      },
+      {
+        "value": 217,
+        "label": "SleighBell "
+      },
+      {
+        "value": 218,
+        "label": "Elec Beat "
+      },
+      {
+        "value": 219,
+        "label": "Idling"
+      },
+      {
+        "value": 220,
+        "label": "EthnicBeat "
+      },
+      {
+        "value": 221,
+        "label": "Taps"
+      },
+      {
+        "value": 222,
+        "label": "Tap 1"
+      },
+      {
+        "value": 223,
+        "label": "Tap 2"
+      },
+      {
+        "value": 224,
+        "label": "Tap 3"
+      },
+      {
+        "value": 225,
+        "label": "Tap 4"
+      },
+      {
+        "value": 226,
+        "label": "Tap 5"
+      },
+      {
+        "value": 227,
+        "label": "Orch Hit "
+      },
+      {
+        "value": 228,
+        "label": "SnareRI/Ht "
+      },
+      {
+        "value": 229,
+        "label": "Syn Snare "
+      },
+      {
+        "value": 230,
+        "label": "Rev Snare "
+      },
+      {
+        "value": 231,
+        "label": "PowerSnare "
+      },
+      {
+        "value": 232,
+        "label": "Orch Perc "
+      },
+      {
+        "value": 233,
+        "label": "Crash Cym "
+      },
+      {
+        "value": 234,
+        "label": "CrashCymLP "
+      },
+      {
+        "value": 235,
+        "label": "CrashLP NT "
+      },
+      {
+        "value": 236,
+        "label": "China Cym "
+      },
+      {
+        "value": 237,
+        "label": "Splash Cym"
+      },
+      {
+        "value": 238,
+        "label": "Orch Crash"
+      },
+      {
+        "value": 239,
+        "label": "Tite HH"
+      },
+      {
+        "value": 240,
+        "label": "Tite HH NT"
+      },
+      {
+        "value": 241,
+        "label": "Bell Ride"
+      },
+      {
+        "value": 242,
+        "label": "Ping Ride"
+      },
+      {
+        "value": 243,
+        "label": "Timpani"
+      },
+      {
+        "value": 244,
+        "label": "Timpani LP"
+      },
+      {
+        "value": 245,
+        "label": "Cabasa"
+      },
+      {
+        "value": 246,
+        "label": "Cabasa NT"
+      },
+      {
+        "value": 247,
+        "label": "Agogo"
+      },
+      {
+        "value": 248,
+        "label": "Cow Bell"
+      },
+      {
+        "value": 249,
+        "label": "Low Bongo"
+      },
+      {
+        "value": 250,
+        "label": "Claves"
+      },
+      {
+        "value": 251,
+        "label": "Timbale"
+      },
+      {
+        "value": 252,
+        "label": "WoodBlockt"
+      },
+      {
+        "value": 253,
+        "label": "WoodBlock2 "
+      },
+      {
+        "value": 254,
+        "label": "WoodBlock3"
+      },
+      {
+        "value": 255,
+        "label": "Taiko Hit"
+      },
+      {
+        "value": 256,
+        "label": "Syn Claves"
+      },
+      {
+        "value": 257,
+        "label": "Melo Tom"
+      },
+      {
+        "value": 258,
+        "label": "ProccesTom "
+      },
+      {
+        "value": 259,
+        "label": "Syn Tom 1 "
+      },
+      {
+        "value": 260,
+        "label": "Syn Tom 2 "
+      },
+      {
+        "value": 261,
+        "label": "VocalSnare "
+      },
+      {
+        "value": 262,
+        "label": "Zap 1"
+      },
+      {
+        "value": 263,
+        "label": "Zap 2"
+      },
+      {
+        "value": 264,
+        "label": "FretZap 1 "
+      },
+      {
+        "value": 265,
+        "label": "Fret Zap 2 "
+      },
+      {
+        "value": 266,
+        "label": "Vibla Slap "
+      },
+      {
+        "value": 267,
+        "label": "Indust"
+      },
+      {
+        "value": 268,
+        "label": "Thing"
+      },
+      {
+        "value": 269,
+        "label": "Thing NT"
+      },
+      {
+        "value": 270,
+        "label": "FingerSnap "
+      },
+      {
+        "value": 271,
+        "label": "FingSnapNT "
+      },
+      {
+        "value": 272,
+        "label": "Tambourine "
+      },
+      {
+        "value": 273,
+        "label": "Hand Clap "
+      },
+      {
+        "value": 274,
+        "label": "HandClapNT "
+      },
+      {
+        "value": 275,
+        "label": "Gun Shot "
+      },
+      {
+        "value": 276,
+        "label": "Castanet "
+      },
+      {
+        "value": 277,
+        "label": "CastanetNT "
+      },
+      {
+        "value": 278,
+        "label": "Snap"
+      },
+      {
+        "value": 279,
+        "label": "Snap NT "
+      },
+      {
+        "value": 280,
+        "label": "Gt Scratch "
+      },
+      {
+        "value": 281,
+        "label": "Side Stick "
+      },
+      {
+        "value": 282,
+        "label": "SideStkNT "
+      },
+      {
+        "value": 283,
+        "label": "TimbleSide "
+      },
+      {
+        "value": 284,
+        "label": "TimbISIANT "
+      },
+      {
+        "value": 285,
+        "label": "Syn Rim"
+      },
+      {
+        "value": 286,
+        "label": "Syn Rim NT "
+      },
+      {
+        "value": 287,
+        "label": "Open HH "
+      },
+      {
+        "value": 288,
+        "label": "OpenSyn HH "
+      },
+      {
+        "value": 289,
+        "label": "CloseSynHH "
+      },
+      {
+        "value": 290,
+        "label": "Sagat"
+      },
+      {
+        "value": 291,
+        "label": "Sagat NT "
+      },
+      {
+        "value": 292,
+        "label": "Sagatty "
+      },
+      {
+        "value": 293,
+        "label": "Sagatty NT "
+      },
+      {
+        "value": 294,
+        "label": "JingleBell "
+      },
+      {
+        "value": 295,
+        "label": "Taiko"
+      },
+      {
+        "value": 296,
+        "label": "Slap Bongo "
+      },
+      {
+        "value": 297,
+        "label": "Open Conga "
+      },
+      {
+        "value": 298,
+        "label": "Slap Conga "
+      },
+      {
+        "value": 299,
+        "label": "Palm Conga "
+      },
+      {
+        "value": 300,
+        "label": "Mute Conga "
+      },
+      {
+        "value": 301,
+        "label": "Tabla 1"
+      },
+      {
+        "value": 302,
+        "label": "Tabla 2"
+      },
+      {
+        "value": 303,
+        "label": "Maracas "
+      },
+      {
+        "value": 304,
+        "label": "SynMaracas "
+      },
+      {
+        "value": 305,
+        "label": "SynMarcsNT "
+      },
+      {
+        "value": 306,
+        "label": "MuteTriang"
+      },
+      {
+        "value": 307,
+        "label": "OpenTriang "
+      },
+      {
+        "value": 308,
+        "label": "Guiro"
+      },
+      {
+        "value": 309,
+        "label": "Guiro LP "
+      },
+      {
+        "value": 310,
+        "label": "Scratch Hi "
+      },
+      {
+        "value": 311,
+        "label": "ScratcHINT"
+      },
+      {
+        "value": 312,
+        "label": "Scratch Lo "
+      },
+      {
+        "value": 313,
+        "label": "ScratcLoNT "
+      },
+      {
+        "value": 314,
+        "label": "ScratchDbl "
+      },
+      {
+        "value": 315,
+        "label": "ScratDbINT "
+      },
+      {
+        "value": 316,
+        "label": "Mini 1a "
+      },
+      {
+        "value": 317,
+        "label": "Digital 1 "
+      },
+      {
+        "value": 318,
+        "label": "VS 102 "
+      },
+      {
+        "value": 319,
+        "label": "VS 48"
+      },
+      {
+        "value": 320,
+        "label": "VS 52 "
+      },
+      {
+        "value": 321,
+        "label": "VS 58 "
+      },
+      {
+        "value": 322,
+        "label": "VS 71 "
+      },
+      {
+        "value": 323,
+        "label": "Vs 72"
+      },
+      {
+        "value": 324,
+        "label": "VS 88 "
+      },
+      {
+        "value": 325,
+        "label": "VS 89 "
+      },
+      {
+        "value": 326,
+        "label": "13 - 35 "
+      },
+      {
+        "value": 327,
+        "label": "DWGSOrgan1"
+      },
+      {
+        "value": 328,
+        "label": "DWGSOrgan2"
+      },
+      {
+        "value": 329,
+        "label": "DWGS E.P."
+      },
+      {
+        "value": 330,
+        "label": "Saw"
+      },
+      {
+        "value": 331,
+        "label": "Square "
+      },
+      {
+        "value": 332,
+        "label": "Ramp"
+      },
+      {
+        "value": 333,
+        "label": "Pulse 25%"
+      },
+      {
+        "value": 334,
+        "label": "Pulse 8% "
+      },
+      {
+        "value": 335,
+        "label": "Pulse 4% "
+      },
+      {
+        "value": 336,
+        "label": "Syn Sine "
+      },
+      {
+        "value": 337,
+        "label": "Sine"
+      },
+      {
+        "value": 338,
+        "label": "DJKit1 "
+      },
+      {
+        "value": 339,
+        "label": "DJ Kit 2"
+      },
+      {
+        "value": 340,
+        "label": "M1 Piano "
+      },
+      {
+        "value": 341,
+        "label": "Organ 6"
+      },
+      {
+        "value": 342,
+        "label": "Organ 6 LP "
+      },
+      {
+        "value": 343,
+        "label": "Super BX- 3 "
+      },
+      {
+        "value": 344,
+        "label": "SuperBX3LP "
+      },
+      {
+        "value": 345,
+        "label": "Stick "
+      },
+      {
+        "value": 346,
+        "label": "Tambura "
+      },
+      {
+        "value": 347,
+        "label": "Unknown"
+      },
+      {
+        "value": 348,
+        "label": "SynthBass3"
+      },
+      {
+        "value": 349,
+        "label": "RezBass 1"
+      },
+      {
+        "value": 350,
+        "label": "RezBass 2"
+      },
+      {
+        "value": 351,
+        "label": "MiniBass"
+      },
+      {
+        "value": 352,
+        "label": "SynMallet"
+      },
+      {
+        "value": 353,
+        "label": "Glocken 2"
+      },
+      {
+        "value": 354,
+        "label": "FingCymbal"
+      },
+      {
+        "value": 355,
+        "label": "FingCymbNT "
+      },
+      {
+        "value": 356,
+        "label": "Gong"
+      },
+      {
+        "value": 357,
+        "label": "Gong LP "
+      },
+      {
+        "value": 358,
+        "label": "HardFlutel "
+      },
+      {
+        "value": 359,
+        "label": "HardFlute2"
+      },
+      {
+        "value": 360,
+        "label": "Tin Flute "
+      },
+      {
+        "value": 361,
+        "label": "TinFluteLP "
+      },
+      {
+        "value": 362,
+        "label": "BrightHorn "
+      },
+      {
+        "value": 363,
+        "label": "Glass Vox "
+      },
+      {
+        "value": 364,
+        "label": "Synth Pad "
+      },
+      {
+        "value": 365,
+        "label": "Synth Pad A"
+      },
+      {
+        "value": 366,
+        "label": "Ghostly"
+      },
+      {
+        "value": 367,
+        "label": "WhiteNoise"
+      },
+      {
+        "value": 368,
+        "label": "WhiteNoiNT"
+      },
+      {
+        "value": 369,
+        "label": "Jetstar"
+      },
+      {
+        "value": 370,
+        "label": "Jetstar LP"
+      },
+      {
+        "value": 371,
+        "label": "JetstrLPNT"
+      },
+      {
+        "value": 372,
+        "label": "Windbell"
+      },
+      {
+        "value": 373,
+        "label": "WindbellLP "
+      },
+      {
+        "value": 374,
+        "label": "WindbellNT"
+      },
+      {
+        "value": 375,
+        "label": "Waterphone"
+      },
+      {
+        "value": 376,
+        "label": "WaveSweep"
+      },
+      {
+        "value": 377,
+        "label": "WaveSweepA"
+      },
+      {
+        "value": 378,
+        "label": "WaveSweepB "
+      },
+      {
+        "value": 379,
+        "label": "Lore "
+      },
+      {
+        "value": 380,
+        "label": "Lore NT "
+      },
+      {
+        "value": 381,
+        "label": "Tron Up "
+      },
+      {
+        "value": 382,
+        "label": "TronUp LP "
+      },
+      {
+        "value": 383,
+        "label": "TronUp NT "
+      },
+      {
+        "value": 384,
+        "label": "Flute FX"
+      },
+      {
+        "value": 385,
+        "label": "FluteFX LP"
+      },
+      {
+        "value": 386,
+        "label": "Flutter"
+      },
+      {
+        "value": 387,
+        "label": "Flutter LP"
+      },
+      {
+        "value": 388,
+        "label": "Cast Roll"
+      },
+      {
+        "value": 389,
+        "label": "CastRolINT"
+      },
+      {
+        "value": 390,
+        "label": "Harp Up"
+      },
+      {
+        "value": 391,
+        "label": "Harp Up LP"
+      },
+      {
+        "value": 392,
+        "label": "Jung Gliss"
+      },
+      {
+        "value": 393,
+        "label": "JungGlisLP"
+      },
+      {
+        "value": 394,
+        "label": "MalletLoop"
+      },
+      {
+        "value": 395,
+        "label": "MalletLpNT"
+      },
+      {
+        "value": 396,
+        "label": "Boogeta "
+      },
+      {
+        "value": 397,
+        "label": "MouthHarp1 "
+      },
+      {
+        "value": 398,
+        "label": "MouthHrp1A "
+      },
+      {
+        "value": 399,
+        "label": "MouthHarp2 "
+      },
+      {
+        "value": 400,
+        "label": "MouthHrp2A "
+      },
+      {
+        "value": 401,
+        "label": "ChromRes"
+      },
+      {
+        "value": 402,
+        "label": "WahFuzz"
+      },
+      {
+        "value": 403,
+        "label": "OilDrum"
+      },
+      {
+        "value": 404,
+        "label": "Fist"
+      },
+      {
+        "value": 405,
+        "label": "Stick Hit"
+      },
+      {
+        "value": 406,
+        "label": "Metal Hit"
+      },
+      {
+        "value": 407,
+        "label": "GlassBreak"
+      },
+      {
+        "value": 408,
+        "label": "Baya"
+      },
+      {
+        "value": 409,
+        "label": "Drop "
+      },
+      {
+        "value": 410,
+        "label": "CorkPop "
+      },
+      {
+        "value": 411,
+        "label": "Pull 1"
+      },
+      {
+        "value": 412,
+        "label": "Pull 1 NT"
+      },
+      {
+        "value": 413,
+        "label": "Pull 2"
+      },
+      {
+        "value": 414,
+        "label": "Pull 2NT "
+      },
+      {
+        "value": 415,
+        "label": "SolidHit "
+      },
+      {
+        "value": 416,
+        "label": "HandDrill "
+      },
+      {
+        "value": 417,
+        "label": "HandDrilNT "
+      },
+      {
+        "value": 418,
+        "label": "Scratch a "
+      },
+      {
+        "value": 419,
+        "label": "Samurai!"
+      },
+      {
+        "value": 420,
+        "label": "Growl!"
+      },
+      {
+        "value": 421,
+        "label": "Growl NT"
+      },
+      {
+        "value": 422,
+        "label": "Monkey 1"
+      },
+      {
+        "value": 423,
+        "label": "Monkey 2 "
+      },
+      {
+        "value": 424,
+        "label": "MouthHarps "
+      },
+      {
+        "value": 425,
+        "label": "Loopey"
+      },
+      {
+        "value": 426,
+        "label": "ClockWorks "
+      },
+      {
+        "value": 427,
+        "label": "Musicaloop"
+      },
+      {
+        "value": 428,
+        "label": "Manimals "
+      },
+      {
+        "value": 429,
+        "label": "Down Lo"
       }
     ]
   }
-]
+}
