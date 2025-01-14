@@ -1,31 +1,37 @@
 import { StateCreator } from "zustand";
 import { ConfigJson } from "./ConfigSlice";
+import { getBit } from "../utils/converters";
 
 export interface ProgramParameterJson {
   name: string;
   label: string;
   enabled: boolean;
   active: boolean;
-  sysexOutParamVal: {
+  sysexOutParamVal?: {
     type: string;
     ParamNo: number;
   };
-  dumpParamVal: {
-    type: "single" | "double" | "singleBit" | "bitRange";
+  dumpParamVal?: {
+    type: "single" | "double" | "singleBit" | "bitRange" | "special";
     bitNo?: number;
     bitStart?: number;
     bitEnd?: number;
     ParamNo: number;
+    specialType?: string;
+    specialArgs?: {
+      name: string;
+      value: number;
+    }[];
   };
-  paramType: "select" | "slider";
+  paramType: "select" | "slider" | "label";
   values?: {
-    value: number;
+    value: number | string;
     label: string;
   }[];
   valuesConstant?: string;
   valueFrom?: number;
   valueTo?: number;
-  defaultParameterValue: number;
+  defaultParameterValue?: number;
   children?: ProgramParameterJson[];
 }
 
@@ -82,6 +88,13 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
     ) {
       parameters.forEach((parameter) => {
         if (parameter.children) {
+          flatJson.push({
+            name: parentName + parameter.name,
+            label: parameter.label,
+            enabled: true,
+            active: false,
+            paramType: "label",
+          });
           flattenParameters(
             parameter.children,
             parentName + parameter.name + "_"
@@ -93,6 +106,8 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
     }
 
     flattenParameters(json);
+
+    // console.log(flatJson);
 
     flatJson.forEach((parameter: ProgramParameterJson, index) => {
       const p = {
@@ -109,6 +124,7 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
           programParameters: [...state.programParameters, p],
         }));
     });
+    // console.log(get().programParameters);
   },
   getParameterById: (id: number) => {
     return get().programParameters.find((p) => p.id === id);
@@ -177,8 +193,41 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
             dumpParam.bitStart!;
           console.log(p.name, dumpValue, dump[dumpParam.ParamNo]);
           break;
+        case "special":
+          dumpValue = specialFunctions(dump[dumpParam.ParamNo], dumpParam);
+          break;
       }
       get().setParameterValue(p.id, dumpValue);
     });
   },
 });
+
+const specialFunctions = (
+  dumpValue: number,
+  dumpParam: ProgramParameterJson["dumpParamVal"]
+) => {
+  switch (dumpParam?.specialType) {
+    case "korg_x5_sw_pol":
+      return korg_x5_sw_pol(
+        dumpValue,
+        dumpParam.specialArgs![0].value,
+        dumpParam.specialArgs![1].value
+      );
+    default:
+      return dumpValue;
+  }
+};
+
+const korg_x5_sw_pol = (
+  dumpValue: number,
+  bit1: number,
+  bit2: number
+): number => {
+  // fetch both bit values from dumpValue
+  const sw = getBit(dumpValue, bit1);
+  const pol = getBit(dumpValue, bit2);
+  // console.log({ sw, pol });
+  if (sw && !pol) return 1;
+  if (sw && pol) return -1;
+  return 0;
+};

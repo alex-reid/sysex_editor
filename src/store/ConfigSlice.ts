@@ -5,7 +5,7 @@ export interface ConfigJson {
   parameters: ProgramParameterJson[];
   constants: {
     [key: string]: {
-      value: number;
+      value: number | string;
       label: string;
     }[];
   };

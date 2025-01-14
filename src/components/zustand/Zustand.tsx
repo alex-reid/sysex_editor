@@ -1,6 +1,6 @@
 import { ProgramParameterJson } from "../../store/ProgramSlice";
 import useStore from "../../store/store";
-import x5dr from "../../constants/x5dr/parameters.json";
+import x5dr from "../../constants/x5dr/x5drConfig.json";
 import { ParamList } from "./ParamList";
 import { useEffect } from "react";
 
@@ -31,7 +31,7 @@ const Zustand = () => {
 
   return (
     <div>
-      <p>Parameters:</p>
+      <h3>Parameters:</h3>
       <div
         style={{
           display: "grid",

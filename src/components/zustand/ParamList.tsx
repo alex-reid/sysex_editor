@@ -12,7 +12,7 @@ export function ParamList({
   return (
     <>
       {programParameters.map((parameter: ProgramParameters, key: number) => {
-        if (parameter.enabled && parameter.sysexOutParamVal) {
+        if (parameter.enabled) {
           switch (parameter.paramType) {
             case "slider":
               return (
@@ -29,6 +29,19 @@ export function ParamList({
                   key={key}
                   functionCode={programConfig?.functionCode || 0}
                 />
+              );
+            case "label":
+              return (
+                <div
+                  key={key}
+                  style={{
+                    width: "100%",
+                    gridColumnStart: 1,
+                    gridColumnEnd: -1,
+                  }}
+                >
+                  <h4>{parameter.label}</h4>
+                </div>
               );
             default:
               return null;

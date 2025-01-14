@@ -31,7 +31,7 @@ const InputSlider = ({
         sendSysexMessage(
           functionCode,
           paramChangeSysexMessage(
-            params.sysexOutParamVal.ParamNo,
+            params.sysexOutParamVal!.ParamNo,
             parseInt(e.target.value, 10)
           )
         )

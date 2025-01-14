@@ -1,5 +1,5 @@
 import "./App.css";
-import { WebMidiProvider } from "./contexts/webmidi";
+import { WebMidiProvider } from "./contexts/WebMidiProvider";
 import { MidiSetup } from "./components/MidiSetup/MidiSetup";
 import SysyexValue from "./components/SysexValue/SysexValue";
 import { FUNCTION_CODE_SEND } from "./constants/x5dr";
