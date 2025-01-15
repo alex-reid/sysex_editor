@@ -44,8 +44,6 @@ const SelectDropdown = ({
   return (
     <div>
       <label>
-        {params.label}
-        <br />
         {params.values && params.values.length > 0 && (
           <select onChange={handleSelectChange} value={params.parameterValue}>
             {params.values.map(({ value: val, label }) => (
@@ -55,6 +53,8 @@ const SelectDropdown = ({
             ))}
           </select>
         )}
+        <br />
+        {params.label}
       </label>
     </div>
   );

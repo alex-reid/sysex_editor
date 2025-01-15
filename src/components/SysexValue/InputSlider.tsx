@@ -48,14 +48,13 @@ const InputSlider = ({
   return (
     <div>
       <label>
-        {params.label}
-        <br />
-        <input
+        <ExtendedInput
           type="range"
           min={params.valueFrom}
           max={params.valueTo}
           onChange={handleSliderChange}
           value={params.parameterValue}
+          orient="vertical"
         />
         <input
           type="number"
@@ -63,9 +62,17 @@ const InputSlider = ({
           readOnly
           style={{ maxWidth: "2rem" }}
         />
+        <br />
+        {params.label}
       </label>
     </div>
   );
+};
+
+const ExtendedInput: React.FC<
+  React.InputHTMLAttributes<HTMLInputElement> & { orient?: "vertical" }
+> = (props) => {
+  return <input {...props} />;
 };
 
 export default InputSlider;

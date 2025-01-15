@@ -35,8 +35,7 @@ const Zustand = () => {
       <div
         style={{
           display: "grid",
-          // grid auto coloumns with min width of 250px
-          gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
           gap: "1rem",
         }}
       >
