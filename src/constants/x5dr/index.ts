@@ -5,4 +5,3 @@ export {
   PROGRAM_EDIT_PARAMETER,
   debugFunctionData,
 } from "./midiinfo";
-export { default as MULTISOUND_NAMES } from "./multisoundNames.json";
