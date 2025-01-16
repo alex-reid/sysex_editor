@@ -15,9 +15,9 @@
 
 .container {
   width: 100%;
-  height: 100%;
-  max-width: 80px;
-  max-height: 80px;
+  /* height: 100%; */
+  /* max-width: 80px;
+  max-height: 80px; */
   aspect-ratio: 1/1;
   position: relative;
   border-radius: 50%;

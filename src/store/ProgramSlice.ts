@@ -59,6 +59,7 @@ export interface ProgramSlice {
   setParameterActive: (id: number, active: boolean) => void;
   setAllParametersActive: (active: boolean) => void;
   setProgramParameterSysexDump: (dump: number[]) => void;
+  getParameterList: () => { id: number; paramType: string; enabled: boolean }[];
 }
 
 export const createProgramSlice: StateCreator<ProgramSlice, []> = (
@@ -199,6 +200,14 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
       }
       get().setParameterValue(p.id, dumpValue);
     });
+  },
+  getParameterList: () => {
+    const state = get();
+    return state.programParameters.map((p) => ({
+      id: p.id,
+      paramType: p.paramType,
+      enabled: p.enabled,
+    }));
   },
 });
 

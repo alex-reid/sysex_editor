@@ -5,19 +5,12 @@ import SysyexValue from "./components/SysexValue/SysexValue";
 import { FUNCTION_CODE_SEND } from "./constants/x5dr";
 import DumpRequest from "./components/SysexValue/DumpRequest";
 import Zustand from "./components/zustand/Zustand";
-import Knob from "./components/widgets/Knob";
 
 function App() {
   return (
     <WebMidiProvider>
       <MidiSetup />
-      <Knob
-        valueMin={-99}
-        valueMax={99}
-        valueDefault={0}
-        tooltip="EG Time Mod by Keyboard Track Attack Time"
-        label="KT Attack Time"
-      />
+      {/* <KnobTester /> */}
       <SysyexValue
         functionCode={FUNCTION_CODE_SEND.MODE_REQUEST}
         data={[]}

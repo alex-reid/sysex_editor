@@ -5,67 +5,73 @@ import {
   useKnobKeyboardControls,
 } from "react-knob-headless";
 import classes from "./Knob.module.css";
-import { useId, useState } from "react";
+import { memo, useId } from "react";
 
 interface KnobProps {
   valueMin: number;
   valueMax: number;
-  valueDefault: number;
   label: string;
   tooltip: string;
+  valueRaw: number;
+  setValueRaw: (value: number) => void;
 }
 
-const Knob = ({
-  valueMin,
-  valueMax,
-  valueDefault,
-  label,
-  tooltip,
-}: KnobProps) => {
-  const knobId = useId();
-  const labelId = useId();
-  const [valueRaw, setValueRaw] = useState<number>(valueDefault);
-  const value01 = (valueRaw - valueMin) / (valueMax - valueMin);
-  const step = 1;
-  const stepLarger = 10;
-  const dragSensitivity = 0.003;
-
-  const keyboardControlHandlers = useKnobKeyboardControls({
-    valueRaw,
+const Knob = memo(
+  ({
     valueMin,
     valueMax,
-    step,
-    stepLarger,
-    onValueRawChange: setValueRaw,
-  });
+    label,
+    tooltip,
+    valueRaw,
+    setValueRaw,
+  }: KnobProps) => {
+    const knobId = useId();
+    const labelId = useId();
+    // const [valueRaw, setValueRaw] = useState<number>(valueDefault);
+    const value01 = (valueRaw - valueMin) / (valueMax - valueMin);
+    const step = 1;
+    const stepLarger = 10;
+    const dragSensitivity = 0.003;
 
-  return (
-    <div className={classes.knob} title={tooltip}>
-      <KnobHeadlessLabel id={labelId}>{label}</KnobHeadlessLabel>
-      <KnobHeadless
-        id={knobId}
-        aria-labelledby={labelId}
-        className={classes.container}
-        valueMin={valueMin}
-        valueMax={valueMax}
-        valueRaw={valueRaw}
-        valueRawRoundFn={valueRawRoundFn}
-        valueRawDisplayFn={valueRawDisplayFn}
-        dragSensitivity={dragSensitivity}
-        onValueRawChange={(e) => {
-          setValueRaw(e);
-        }}
-        includeIntoTabOrder
-        {...keyboardControlHandlers}
-      >
-        <KnobBaseThumb value01={value01} />
-      </KnobHeadless>
-      <KnobHeadlessOutput htmlFor={knobId} className={classes.value}>
-        {valueRawDisplayFn(valueRaw)}
-      </KnobHeadlessOutput>
-    </div>
-  );
-};
+    const keyboardControlHandlers = useKnobKeyboardControls({
+      valueRaw,
+      valueMin,
+      valueMax,
+      step,
+      stepLarger,
+      onValueRawChange: setValueRaw,
+    });
+
+    // console.log(label + " ReRender");
+
+    return (
+      <div className={classes.knob} title={tooltip}>
+        <KnobHeadlessLabel id={labelId}>{label}</KnobHeadlessLabel>
+        <KnobHeadless
+          id={knobId}
+          aria-labelledby={labelId}
+          className={classes.container}
+          valueMin={valueMin}
+          valueMax={valueMax}
+          valueRaw={valueRaw}
+          valueRawRoundFn={valueRawRoundFn}
+          valueRawDisplayFn={valueRawDisplayFn}
+          dragSensitivity={dragSensitivity}
+          onValueRawChange={(e) => {
+            setValueRaw(e);
+          }}
+          includeIntoTabOrder
+          {...keyboardControlHandlers}
+        >
+          <KnobBaseThumb value01={value01} />
+        </KnobHeadless>
+        <KnobHeadlessOutput htmlFor={knobId} className={classes.value}>
+          {valueRawDisplayFn(valueRaw)}
+        </KnobHeadlessOutput>
+      </div>
+    );
+  }
+);
 
 const valueRawRoundFn = Math.round;
 const valueRawDisplayFn = (valueRaw: number): string =>

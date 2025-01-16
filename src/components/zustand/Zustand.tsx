@@ -2,11 +2,18 @@ import { ProgramParameterJson } from "../../store/ProgramSlice";
 import useStore from "../../store/store";
 import x5dr from "../../constants/x5dr/x5drConfig.json";
 import { ParamList } from "./ParamList";
-import { useEffect } from "react";
+import { memo, useCallback, useEffect } from "react";
 
-function ProgramParams() {
+const ProgramParams = memo(() => {
   const programConfig = useStore((state) => state.programConfig);
   const programParameters = useStore((state) => state.programParameters);
+  // useEffect(() => {
+  //   console.log("programConfig", programConfig);
+  // }, [programConfig]);
+  // useEffect(() => {
+  //   console.log("programParameters", programParameters);
+  // }, [programParameters]);
+  // return null;
   if (!programConfig || !programParameters) return null;
   return (
     <ParamList
@@ -14,17 +21,17 @@ function ProgramParams() {
       programConfig={programConfig}
     />
   );
-}
+});
 
 const Zustand = () => {
   const loadFromJSON = useStore((state) => state.loadFromJSON);
   const setAllParametersActive = useStore(
     (state) => state.setAllParametersActive
   );
-  const handleLoad = () => {
+  const handleLoad = useCallback(() => {
     loadFromJSON(x5dr.parameters as ProgramParameterJson[], x5dr.constants);
     setAllParametersActive(true);
-  };
+  }, [loadFromJSON, setAllParametersActive]);
   useEffect(() => {
     handleLoad();
   });

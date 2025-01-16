@@ -208,7 +208,8 @@ export const WebMidiProvider: React.FC<{ children: React.ReactNode }> = ({
               reject(
                 new Error(
                   "Received unexpected message: " +
-                    displayNumberAsHex(functionId)
+                    // displayNumberAsHex(functionId)
+                    functionId
                 )
               );
             }
