@@ -1,5 +1,6 @@
 import { ProgramParameters, ProgramConfig } from "../../store/ProgramSlice";
 import InputKnobMemo from "../SysexValue/InputKnob";
+import InputToggle from "../SysexValue/InputToggle";
 import SelectDropdown from "../SysexValue/SelectDropdown";
 
 export function ParamList({
@@ -22,8 +23,15 @@ export function ParamList({
                   functionCode={programConfig?.functionCode || 0}
                 />
               );
-            case "list":
             case "boolean":
+              return (
+                <InputToggle
+                  id={parameter.id}
+                  key={key}
+                  functionCode={programConfig?.functionCode || 0}
+                />
+              );
+            case "list":
               return (
                 <SelectDropdown
                   id={parameter.id}

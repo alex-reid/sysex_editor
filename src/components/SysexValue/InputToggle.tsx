@@ -2,7 +2,7 @@ import { useWebMidi } from "../../contexts/webmidi";
 import { paramChangeSysexMessage } from "../../utils/converters";
 import useStore from "../../store/store";
 
-const SelectDropdown = ({
+const InputToggle = ({
   functionCode,
   id,
 }: {
@@ -17,14 +17,14 @@ const SelectDropdown = ({
     return null;
   }
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setParameterValue(id, parseInt(e.target.value, 10));
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setParameterValue(id, e.target.checked ? 1 : 0);
 
     sendSysexMessage(
       functionCode,
       paramChangeSysexMessage(
         params.sysexOutParamVal!.ParamNo,
-        parseInt(e.target.value, 10)
+        e.target.checked ? 1 : 0
       )
     )
       .then((data) => {
@@ -38,21 +38,15 @@ const SelectDropdown = ({
   return (
     <div>
       <label>
-        {params.inputSettings!.values &&
-          params.inputSettings!.values.length > 0 && (
-            <select onChange={handleSelectChange} value={params.parameterValue}>
-              {params.inputSettings!.values.map(({ value: val, label }) => (
-                <option key={val} value={val}>
-                  {label}
-                </option>
-              ))}
-            </select>
-          )}
-        <br />
+        <input
+          type="checkbox"
+          checked={params.parameterValue === 1}
+          onChange={handleCheckboxChange}
+        />
         {params.label}
       </label>
     </div>
   );
 };
 
-export default SelectDropdown;
+export default InputToggle;
