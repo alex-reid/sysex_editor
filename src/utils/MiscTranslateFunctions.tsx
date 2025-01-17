@@ -66,6 +66,45 @@ export const GenerateEffectsParams = () => {
   );
 };
 
+const buildNewParam = (param) => {
+  const newParam = { ...param };
+  if (newParam.inputType) {
+    newParam.inputSettings = {};
+    if (newParam.values) {
+      // deep copy values
+      newParam.inputSettings.values = JSON.parse(
+        JSON.stringify(newParam.values)
+      );
+      delete newParam.values;
+    }
+    if (newParam.valuesConstant) {
+      newParam.inputSettings.valuesConstant = newParam.valuesConstant;
+      delete newParam.valuesConstant;
+    }
+    if (newParam.valueFrom) {
+      newParam.inputSettings.valueFrom = newParam.valueFrom;
+      delete newParam.valueFrom;
+    }
+    if (newParam.valueTo) {
+      newParam.inputSettings.valueTo = newParam.valueTo;
+      delete newParam.valueTo;
+    }
+  }
+  return newParam;
+};
+// recursively rebuild the inputs json
+export const rebuildInputsJSON = (json) => {
+  const newJson = json.map((param) => {
+    const newParam = { ...param };
+    if (newParam.children) {
+      newParam.children = rebuildInputsJSON([...newParam.children]);
+      return newParam;
+    }
+    return buildNewParam(newParam);
+  });
+  return newJson;
+};
+
 const Effects = [
   {
     name: "EFFECT 1 TYPE",

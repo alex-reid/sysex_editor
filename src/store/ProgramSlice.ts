@@ -23,7 +23,7 @@ export interface ProgramParameterJson {
       value: number;
     }[];
   };
-  paramType: "select" | "slider" | "label";
+  inputType: "select" | "slider" | "label";
   values?: {
     value: number | string;
     label: string;
@@ -59,7 +59,7 @@ export interface ProgramSlice {
   setParameterActive: (id: number, active: boolean) => void;
   setAllParametersActive: (active: boolean) => void;
   setProgramParameterSysexDump: (dump: number[]) => void;
-  getParameterList: () => { id: number; paramType: string; enabled: boolean }[];
+  getParameterList: () => { id: number; inputType: string; enabled: boolean }[];
 }
 
 export const createProgramSlice: StateCreator<ProgramSlice, []> = (
@@ -94,7 +94,7 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
             label: parameter.label,
             enabled: true,
             active: false,
-            paramType: "label",
+            inputType: "label",
           });
           flattenParameters(
             parameter.children,
@@ -117,7 +117,7 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
         active: false,
         parameterValue: parameter.defaultParameterValue || 0,
       };
-      if (p.paramType === "select" && p.valuesConstant) {
+      if (p.inputType === "select" && p.valuesConstant) {
         p.values = constants[p.valuesConstant];
       }
       if (parameter.enabled)
@@ -205,7 +205,7 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
     const state = get();
     return state.programParameters.map((p) => ({
       id: p.id,
-      paramType: p.paramType,
+      inputType: p.inputType,
       enabled: p.enabled,
     }));
   },

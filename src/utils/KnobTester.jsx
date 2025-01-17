@@ -9,14 +9,14 @@ const KnobTester = () => {
   const { setParameterValue } = useStore((state) => state);
   const params = useStore((state) => state.programParameters[4]);
   const setValueRaw = useCallback(
-    (value: number) => {
+    (value) => {
       setParameterValue(4, value);
     },
     [setParameterValue]
   );
   const params3 = useStore((state) => state.programParameters[3]);
   const setValueRaw3 = useCallback(
-    (value: number) => {
+    (value) => {
       setParameterValue(3, value);
     },
     [setParameterValue]

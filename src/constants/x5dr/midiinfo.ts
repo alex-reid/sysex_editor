@@ -278,10 +278,14 @@ const debugFunctionData = (functionCode: number, data: number[]) => {
   let debugData = displayNumberAsHex(functionCode) + ": ";
   switch (functionCode) {
     case 0x42: // MODE DATA
-      debugData += `MODE DATA - Mode: ${MODE_DATA[data[0]]}`;
+      debugData += `MODE DATA - Mode: ${
+        MODE_DATA[data[0] as 0 | 1 | 2 | 3 | 4 | 5]
+      }`;
       break;
     case 0x4e: // MODE CHANGE
-      debugData += `MODE CHANGE - Mode: ${MODE_DATA[data[0]]}`;
+      debugData += `MODE CHANGE - Mode: ${
+        MODE_DATA[data[0] as 0 | 1 | 2 | 3 | 4 | 5]
+      }`;
       break;
     case 0x41: // PARAMETER CHANGE
       debugData += "PARAMETER CHANGE";

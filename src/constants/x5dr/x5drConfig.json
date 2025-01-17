@@ -13,7 +13,7 @@
         "type": "single",
         "ParamNo": 10
       },
-      "paramType": "select",
+      "inputType": "select",
       "values": [
         {
           "value": 0,
@@ -43,7 +43,7 @@
         "bitNo": 0,
         "ParamNo": 11
       },
-      "paramType": "select",
+      "inputType": "select",
       "values": [
         {
           "value": 0,
@@ -69,7 +69,7 @@
         "bitNo": 1,
         "ParamNo": 11
       },
-      "paramType": "select",
+      "inputType": "select",
       "values": [
         {
           "value": 0,
@@ -93,7 +93,7 @@
         "type": "single",
         "ParamNo": 21
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -99,
       "valueTo": 99
     },
@@ -110,7 +110,7 @@
         "type": "single",
         "ParamNo": 22
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": 0,
       "valueTo": 99
     },
@@ -127,7 +127,7 @@
         "type": "single",
         "ParamNo": 23
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -99,
       "valueTo": 99
     },
@@ -144,7 +144,7 @@
         "type": "single",
         "ParamNo": 24
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": 0,
       "valueTo": 99
     },
@@ -161,7 +161,7 @@
         "type": "single",
         "ParamNo": 25
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": 0,
       "valueTo": 99
     },
@@ -178,7 +178,7 @@
         "type": "single",
         "ParamNo": 26
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -99,
       "valueTo": 99
     },
@@ -195,7 +195,7 @@
         "type": "single",
         "ParamNo": 28
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -99,
       "valueTo": 99
     },
@@ -212,7 +212,7 @@
         "type": "single",
         "ParamNo": 27
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -99,
       "valueTo": 99
     },
@@ -231,7 +231,7 @@
         "bitEnd": 2,
         "ParamNo": 29
       },
-      "paramType": "select",
+      "inputType": "select",
       "valuesConstant": "mgWaveforms"
     },
     {
@@ -247,7 +247,7 @@
         "type": "single",
         "ParamNo": 30
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": 0,
       "valueTo": 99
     },
@@ -264,7 +264,7 @@
         "type": "single",
         "ParamNo": 31
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": 0,
       "valueTo": 99
     },
@@ -297,7 +297,7 @@
         "bitEnd": 6,
         "ParamNo": 29
       },
-      "paramType": "select",
+      "inputType": "select",
       "values": [
         {
           "value": 0,
@@ -330,7 +330,7 @@
         "bitNo": 7,
         "ParamNo": 29
       },
-      "paramType": "select",
+      "inputType": "select",
       "values": [
         {
           "value": 0,
@@ -354,7 +354,7 @@
         "type": "single",
         "ParamNo": 33
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -12,
       "valueTo": 12
     },
@@ -371,7 +371,7 @@
         "type": "single",
         "ParamNo": 34
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -99,
       "valueTo": 99
     },
@@ -387,7 +387,7 @@
         "type": "single",
         "ParamNo": 35
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": 0,
       "valueTo": 99
     },
@@ -403,7 +403,7 @@
         "type": "single",
         "ParamNo": 36
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -99,
       "valueTo": 99
     },
@@ -432,7 +432,7 @@
         "type": "single",
         "ParamNo": 37
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -12,
       "valueTo": 12
     },
@@ -448,7 +448,7 @@
         "type": "single",
         "ParamNo": 38
       },
-      "paramType": "slider",
+      "inputType": "slider",
       "valueFrom": -99,
       "valueTo": 99
     },
@@ -472,7 +472,7 @@
                 "type": "double",
                 "ParamNo": 12
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "multisoundNames"
             },
             {
@@ -487,7 +487,7 @@
                 "type": "single",
                 "ParamNo": 65
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -503,7 +503,7 @@
                 "type": "single",
                 "ParamNo": 14
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -2,
@@ -535,7 +535,7 @@
                 "type": "single",
                 "ParamNo": 40
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -551,7 +551,7 @@
                 "type": "single",
                 "ParamNo": 86
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "prgPanValues"
             },
             {
@@ -568,7 +568,7 @@
                 "bitEnd": 7,
                 "ParamNo": 82
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 9
             },
@@ -586,7 +586,7 @@
                 "bitEnd": 3,
                 "ParamNo": 82
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 9
             },
@@ -604,7 +604,7 @@
                 "bitStart": 0,
                 "bitEnd": 2
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "mgWaveforms"
             },
             {
@@ -619,7 +619,7 @@
                 "type": "single",
                 "ParamNo": 42
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -635,7 +635,7 @@
                 "type": "single",
                 "ParamNo": 45
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -651,7 +651,7 @@
                 "type": "single",
                 "ParamNo": 43
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -667,7 +667,7 @@
                 "type": "single",
                 "ParamNo": 44
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -684,7 +684,7 @@
                 "ParamNo": 41,
                 "bitNo": 7
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": 0,
@@ -708,7 +708,7 @@
                 "type": "single",
                 "ParamNo": 46
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -724,7 +724,7 @@
                 "type": "single",
                 "ParamNo": 49
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 9
             },
@@ -740,7 +740,7 @@
                 "type": "single",
                 "ParamNo": 47
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -756,7 +756,7 @@
                 "type": "single",
                 "ParamNo": 48
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             }
@@ -778,7 +778,7 @@
                 "type": "single",
                 "ParamNo": 50
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -794,7 +794,7 @@
                 "type": "single",
                 "ParamNo": 53
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -810,7 +810,7 @@
                 "type": "single",
                 "ParamNo": 83
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -826,7 +826,7 @@
                 "type": "single",
                 "ParamNo": 84
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -842,7 +842,7 @@
                 "type": "single",
                 "ParamNo": 57
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -858,7 +858,7 @@
                 "type": "single",
                 "ParamNo": 58
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -874,7 +874,7 @@
                 "type": "single",
                 "ParamNo": 59
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -890,7 +890,7 @@
                 "type": "single",
                 "ParamNo": 60
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -906,7 +906,7 @@
                 "type": "single",
                 "ParamNo": 61
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -922,7 +922,7 @@
                 "type": "single",
                 "ParamNo": 62
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -938,7 +938,7 @@
                 "type": "single",
                 "ParamNo": 63
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -954,7 +954,7 @@
                 "type": "single",
                 "ParamNo": 64
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -970,7 +970,7 @@
                 "type": "single",
                 "ParamNo": 56
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -986,7 +986,7 @@
                 "type": "single",
                 "ParamNo": 55
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1013,7 +1013,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1052,7 +1052,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1091,7 +1091,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1130,7 +1130,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1158,7 +1158,7 @@
                 "type": "single",
                 "ParamNo": 51
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "midiNoteVals"
             },
             {
@@ -1175,7 +1175,7 @@
                 "bitStart": 0,
                 "bitEnd": 1
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": 0,
@@ -1207,7 +1207,7 @@
                 "type": "single",
                 "ParamNo": 52
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -1223,7 +1223,7 @@
                 "type": "single",
                 "ParamNo": 54
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1250,7 +1250,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1289,7 +1289,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1328,7 +1328,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1367,7 +1367,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1401,7 +1401,7 @@
                 "type": "single",
                 "ParamNo": 71
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1417,7 +1417,7 @@
                 "type": "single",
                 "ParamNo": 72
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1433,7 +1433,7 @@
                 "type": "single",
                 "ParamNo": 73
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1449,7 +1449,7 @@
                 "type": "single",
                 "ParamNo": 74
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1465,7 +1465,7 @@
                 "type": "single",
                 "ParamNo": 75
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1481,7 +1481,7 @@
                 "type": "single",
                 "ParamNo": 76
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1497,7 +1497,7 @@
                 "type": "single",
                 "ParamNo": 77
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1513,7 +1513,7 @@
                 "type": "single",
                 "ParamNo": 68
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -1529,7 +1529,7 @@
                 "type": "single",
                 "ParamNo": 70
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1556,7 +1556,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1595,7 +1595,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1634,7 +1634,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1673,7 +1673,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1701,7 +1701,7 @@
                 "type": "single",
                 "ParamNo": 66
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "midiNoteVals"
             },
             {
@@ -1718,7 +1718,7 @@
                 "bitStart": 4,
                 "bitEnd": 5
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": 0,
@@ -1750,7 +1750,7 @@
                 "type": "single",
                 "ParamNo": 67
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -1766,7 +1766,7 @@
                 "type": "single",
                 "ParamNo": 69
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1793,7 +1793,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1832,7 +1832,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1871,7 +1871,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1910,7 +1910,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -1950,7 +1950,7 @@
                 "type": "single",
                 "ParamNo": 18
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -12,
               "valueTo": 12
             },
@@ -1966,7 +1966,7 @@
                 "type": "single",
                 "ParamNo": 19
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -50,
               "valueTo": 50
             },
@@ -1982,7 +1982,7 @@
                 "type": "single",
                 "ParamNo": 20
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -1998,7 +1998,7 @@
                 "type": "double",
                 "ParamNo": 15
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "multisoundNames"
             },
             {
@@ -2013,7 +2013,7 @@
                 "type": "single",
                 "ParamNo": 112
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2029,7 +2029,7 @@
                 "type": "single",
                 "ParamNo": 17
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -2,
@@ -2061,7 +2061,7 @@
                 "type": "single",
                 "ParamNo": 87
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2077,7 +2077,7 @@
                 "type": "single",
                 "ParamNo": 133
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "prgPanValues"
             },
             {
@@ -2094,7 +2094,7 @@
                 "bitEnd": 7,
                 "ParamNo": 129
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 9
             },
@@ -2112,7 +2112,7 @@
                 "bitEnd": 3,
                 "ParamNo": 129
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 9
             },
@@ -2130,7 +2130,7 @@
                 "bitStart": 0,
                 "bitEnd": 2
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "mgWaveforms"
             },
             {
@@ -2145,7 +2145,7 @@
                 "type": "single",
                 "ParamNo": 89
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2157,7 +2157,7 @@
                 "type": "single",
                 "ParamNo": 92
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2173,7 +2173,7 @@
                 "type": "single",
                 "ParamNo": 90
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2189,7 +2189,7 @@
                 "type": "single",
                 "ParamNo": 91
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2206,7 +2206,7 @@
                 "ParamNo": 88,
                 "bitNo": 7
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": 0,
@@ -2230,7 +2230,7 @@
                 "type": "single",
                 "ParamNo": 93
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2246,7 +2246,7 @@
                 "type": "single",
                 "ParamNo": 96
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 9
             },
@@ -2262,7 +2262,7 @@
                 "type": "single",
                 "ParamNo": 94
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2278,7 +2278,7 @@
                 "type": "single",
                 "ParamNo": 95
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             }
@@ -2300,7 +2300,7 @@
                 "type": "single",
                 "ParamNo": 97
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2316,7 +2316,7 @@
                 "type": "single",
                 "ParamNo": 100
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2332,7 +2332,7 @@
                 "type": "single",
                 "ParamNo": 130
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2348,7 +2348,7 @@
                 "type": "single",
                 "ParamNo": 131
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2364,7 +2364,7 @@
                 "type": "single",
                 "ParamNo": 104
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2380,7 +2380,7 @@
                 "type": "single",
                 "ParamNo": 105
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2396,7 +2396,7 @@
                 "type": "single",
                 "ParamNo": 106
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2412,7 +2412,7 @@
                 "type": "single",
                 "ParamNo": 107
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2428,7 +2428,7 @@
                 "type": "single",
                 "ParamNo": 108
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2444,7 +2444,7 @@
                 "type": "single",
                 "ParamNo": 109
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2460,7 +2460,7 @@
                 "type": "single",
                 "ParamNo": 110
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2476,7 +2476,7 @@
                 "type": "single",
                 "ParamNo": 111
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2492,7 +2492,7 @@
                 "type": "single",
                 "ParamNo": 103
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2508,7 +2508,7 @@
                 "type": "single",
                 "ParamNo": 102
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2535,7 +2535,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -2574,7 +2574,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -2613,7 +2613,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -2652,7 +2652,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -2680,7 +2680,7 @@
                 "type": "single",
                 "ParamNo": 98
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "midiNoteVals"
             },
             {
@@ -2697,7 +2697,7 @@
                 "bitStart": 0,
                 "bitEnd": 1
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": 0,
@@ -2729,7 +2729,7 @@
                 "type": "single",
                 "ParamNo": 99
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -2745,7 +2745,7 @@
                 "type": "single",
                 "ParamNo": 101
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2768,7 +2768,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -2807,7 +2807,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -2846,7 +2846,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -2885,7 +2885,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -2919,7 +2919,7 @@
                 "type": "single",
                 "ParamNo": 118
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2935,7 +2935,7 @@
                 "type": "single",
                 "ParamNo": 119
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2951,7 +2951,7 @@
                 "type": "single",
                 "ParamNo": 120
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2967,7 +2967,7 @@
                 "type": "single",
                 "ParamNo": 121
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2983,7 +2983,7 @@
                 "type": "single",
                 "ParamNo": 122
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -2999,7 +2999,7 @@
                 "type": "single",
                 "ParamNo": 123
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -3015,7 +3015,7 @@
                 "type": "single",
                 "ParamNo": 124
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -3031,7 +3031,7 @@
                 "type": "single",
                 "ParamNo": 115
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -3047,7 +3047,7 @@
                 "type": "single",
                 "ParamNo": 117
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -3074,7 +3074,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -3113,7 +3113,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -3152,7 +3152,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -3191,7 +3191,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -3219,7 +3219,7 @@
                 "type": "single",
                 "ParamNo": 113
               },
-              "paramType": "select",
+              "inputType": "select",
               "valuesConstant": "midiNoteVals"
             },
             {
@@ -3236,7 +3236,7 @@
                 "bitStart": 4,
                 "bitEnd": 5
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": 0,
@@ -3268,7 +3268,7 @@
                 "type": "single",
                 "ParamNo": 114
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": -99,
               "valueTo": 99
             },
@@ -3284,7 +3284,7 @@
                 "type": "single",
                 "ParamNo": 116
               },
-              "paramType": "slider",
+              "inputType": "slider",
               "valueFrom": 0,
               "valueTo": 99
             },
@@ -3311,7 +3311,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -3350,7 +3350,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -3389,7 +3389,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -3428,7 +3428,7 @@
                   }
                 ]
               },
-              "paramType": "select",
+              "inputType": "select",
               "values": [
                 {
                   "value": -1,
@@ -3464,7 +3464,7 @@
             "type": "single",
             "ParamNo": 135
           },
-          "paramType": "select",
+          "inputType": "select",
           "valuesConstant": "effectTypes"
         }
       ]

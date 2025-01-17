@@ -1,5 +1,5 @@
 import { ProgramParameters, ProgramConfig } from "../../store/ProgramSlice";
-import InputSlider from "../SysexValue/InputSlider";
+import InputKnobMemo from "../SysexValue/InputKnob";
 import SelectDropdown from "../SysexValue/SelectDropdown";
 
 export function ParamList({
@@ -13,10 +13,10 @@ export function ParamList({
     <>
       {programParameters.map((parameter: ProgramParameters, key: number) => {
         if (parameter.enabled) {
-          switch (parameter.paramType) {
+          switch (parameter.inputType) {
             case "slider":
               return (
-                <InputSlider
+                <InputKnobMemo
                   id={parameter.id}
                   key={key}
                   functionCode={programConfig?.functionCode || 0}
