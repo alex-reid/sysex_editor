@@ -23,7 +23,7 @@ export interface ProgramParameterJson {
       value: number;
     }[];
   };
-  inputType: "select" | "slider" | "label";
+  inputType: "list" | "number" | "boolean" | "label";
   inputSettings?: {
     values?: {
       value: number | string;
@@ -120,7 +120,7 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
         parameterValue: parameter.defaultParameterValue || 0,
       };
       if (
-        p.inputType === "select" &&
+        p.inputType === "list" &&
         p.inputSettings &&
         p.inputSettings.valuesConstant
       ) {

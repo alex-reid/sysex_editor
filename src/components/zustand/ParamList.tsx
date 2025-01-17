@@ -14,7 +14,7 @@ export function ParamList({
       {programParameters.map((parameter: ProgramParameters, key: number) => {
         if (parameter.enabled) {
           switch (parameter.inputType) {
-            case "slider":
+            case "number":
               return (
                 <InputKnobMemo
                   id={parameter.id}
@@ -22,7 +22,8 @@ export function ParamList({
                   functionCode={programConfig?.functionCode || 0}
                 />
               );
-            case "select":
+            case "list":
+            case "boolean":
               return (
                 <SelectDropdown
                   id={parameter.id}

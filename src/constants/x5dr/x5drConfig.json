@@ -6,7 +6,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 0 },
       "dumpParamVal": { "type": "single", "ParamNo": 10 },
-      "inputType": "select",
+      "inputType": "list",
       "inputSettings": {
         "values": [
           { "value": 0, "label": "Single" },
@@ -21,7 +21,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 1 },
       "dumpParamVal": { "type": "singleBit", "bitNo": 0, "ParamNo": 11 },
-      "inputType": "select",
+      "inputType": "list",
       "inputSettings": {
         "values": [
           { "value": 0, "label": "Poly" },
@@ -35,7 +35,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 2 },
       "dumpParamVal": { "type": "singleBit", "bitNo": 1, "ParamNo": 11 },
-      "inputType": "select",
+      "inputType": "boolean",
       "inputSettings": {
         "values": [
           { "value": 0, "label": "Off" },
@@ -49,7 +49,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 3 },
       "dumpParamVal": { "type": "single", "ParamNo": 21 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -99, "valueTo": 99 }
     },
     {
@@ -58,7 +58,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 4 },
       "dumpParamVal": { "type": "single", "ParamNo": 22 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": 0, "valueTo": 99 }
     },
     {
@@ -67,7 +67,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 5 },
       "dumpParamVal": { "type": "single", "ParamNo": 23 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -99, "valueTo": 99 }
     },
     {
@@ -76,7 +76,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 6 },
       "dumpParamVal": { "type": "single", "ParamNo": 24 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": 0, "valueTo": 99 }
     },
     {
@@ -85,7 +85,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 7 },
       "dumpParamVal": { "type": "single", "ParamNo": 25 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": 0, "valueTo": 99 }
     },
     {
@@ -94,7 +94,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 8 },
       "dumpParamVal": { "type": "single", "ParamNo": 26 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -99, "valueTo": 99 }
     },
     {
@@ -103,7 +103,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 9 },
       "dumpParamVal": { "type": "single", "ParamNo": 28 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -99, "valueTo": 99 }
     },
     {
@@ -112,7 +112,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 10 },
       "dumpParamVal": { "type": "single", "ParamNo": 27 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -99, "valueTo": 99 }
     },
     {
@@ -126,7 +126,7 @@
         "bitEnd": 2,
         "ParamNo": 29
       },
-      "inputType": "select",
+      "inputType": "list",
       "inputSettings": { "valuesConstant": "mgWaveforms" }
     },
     {
@@ -135,7 +135,7 @@
       "enabled": true,
       "sysexOutParamVal": { "type": "single", "ParamNo": 12 },
       "dumpParamVal": { "type": "single", "ParamNo": 30 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": 0, "valueTo": 99 }
     },
     {
@@ -144,7 +144,7 @@
       "label": "Cutoff Modulation Generator Intensity",
       "sysexOutParamVal": { "type": "single", "ParamNo": 13 },
       "dumpParamVal": { "type": "single", "ParamNo": 31 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": 0, "valueTo": 99 }
     },
     {
@@ -165,7 +165,7 @@
         "bitEnd": 6,
         "ParamNo": 29
       },
-      "inputType": "select",
+      "inputType": "list",
       "inputSettings": {
         "values": [
           { "value": 0, "label": "Off" },
@@ -181,7 +181,7 @@
       "label": "Cutoff Modulation Key Sync",
       "sysexOutParamVal": { "type": "single", "ParamNo": 16 },
       "dumpParamVal": { "type": "singleBit", "bitNo": 7, "ParamNo": 29 },
-      "inputType": "select",
+      "inputType": "boolean",
       "inputSettings": {
         "values": [
           { "value": 0, "label": "Off" },
@@ -195,7 +195,7 @@
       "label": "AfterTouch Pitch Bend Range",
       "sysexOutParamVal": { "type": "single", "ParamNo": 17 },
       "dumpParamVal": { "type": "single", "ParamNo": 33 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -12, "valueTo": 12 }
     },
     {
@@ -204,7 +204,7 @@
       "label": "AfterTouch VDF Cutoff",
       "sysexOutParamVal": { "type": "single", "ParamNo": 18 },
       "dumpParamVal": { "type": "single", "ParamNo": 34 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -99, "valueTo": 99 }
     },
     {
@@ -213,7 +213,7 @@
       "label": "AfterTouch VDF Mod. Gen. Intensity",
       "sysexOutParamVal": { "type": "single", "ParamNo": 19 },
       "dumpParamVal": { "type": "single", "ParamNo": 35 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": 0, "valueTo": 99 }
     },
     {
@@ -222,7 +222,7 @@
       "label": "AfterTouch VDA Amplitude",
       "sysexOutParamVal": { "type": "single", "ParamNo": 20 },
       "dumpParamVal": { "type": "single", "ParamNo": 36 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -99, "valueTo": 99 }
     },
     {
@@ -238,7 +238,7 @@
       "label": "Pitch Bend Range",
       "sysexOutParamVal": { "type": "single", "ParamNo": 22 },
       "dumpParamVal": { "type": "single", "ParamNo": 37 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -12, "valueTo": 12 }
     },
     {
@@ -247,7 +247,7 @@
       "label": "VDF Sweep Intensity",
       "sysexOutParamVal": { "type": "single", "ParamNo": 23 },
       "dumpParamVal": { "type": "single", "ParamNo": 38 },
-      "inputType": "slider",
+      "inputType": "number",
       "inputSettings": { "valueFrom": -99, "valueTo": 99 }
     },
     {
@@ -264,7 +264,7 @@
               "label": "Multisound Waveform",
               "sysexOutParamVal": { "type": "single", "ParamNo": 24 },
               "dumpParamVal": { "type": "double", "ParamNo": 12 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "multisoundNames" }
             },
             {
@@ -273,7 +273,7 @@
               "label": "Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 25 },
               "dumpParamVal": { "type": "single", "ParamNo": 65 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -282,7 +282,7 @@
               "label": "Octave",
               "sysexOutParamVal": { "type": "single", "ParamNo": 26 },
               "dumpParamVal": { "type": "single", "ParamNo": 14 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -2, "label": "32'" },
@@ -298,7 +298,7 @@
               "label": "Pitch EG Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 27 },
               "dumpParamVal": { "type": "single", "ParamNo": 40 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -307,7 +307,7 @@
               "label": "A B Pan",
               "sysexOutParamVal": { "type": "single", "ParamNo": 28 },
               "dumpParamVal": { "type": "single", "ParamNo": 86 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "prgPanValues" }
             },
             {
@@ -321,7 +321,7 @@
                 "bitEnd": 7,
                 "ParamNo": 82
               },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 9 }
             },
             {
@@ -335,7 +335,7 @@
                 "bitEnd": 3,
                 "ParamNo": 82
               },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 9 }
             },
             {
@@ -349,7 +349,7 @@
                 "bitStart": 0,
                 "bitEnd": 2
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "mgWaveforms" }
             },
             {
@@ -358,7 +358,7 @@
               "label": "Pitch MG Frequency",
               "sysexOutParamVal": { "type": "single", "ParamNo": 79 },
               "dumpParamVal": { "type": "single", "ParamNo": 42 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -367,7 +367,7 @@
               "label": "Pitch MG Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 80 },
               "dumpParamVal": { "type": "single", "ParamNo": 45 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -376,7 +376,7 @@
               "label": "Pitch MG Delay",
               "sysexOutParamVal": { "type": "single", "ParamNo": 81 },
               "dumpParamVal": { "type": "single", "ParamNo": 43 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -385,7 +385,7 @@
               "label": "Pitch MG Fade In",
               "sysexOutParamVal": { "type": "single", "ParamNo": 82 },
               "dumpParamVal": { "type": "single", "ParamNo": 44 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -398,7 +398,7 @@
                 "ParamNo": 41,
                 "bitNo": 7
               },
-              "inputType": "select",
+              "inputType": "boolean",
               "inputSettings": {
                 "values": [
                   { "value": 0, "label": "Off" },
@@ -412,7 +412,7 @@
               "label": "Pitch MG Mod. By Kbd. Track",
               "sysexOutParamVal": { "type": "single", "ParamNo": 84 },
               "dumpParamVal": { "type": "single", "ParamNo": 46 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -421,7 +421,7 @@
               "label": "Pitch MG Frequency Mod. By AT M. Wheel",
               "sysexOutParamVal": { "type": "single", "ParamNo": 85 },
               "dumpParamVal": { "type": "single", "ParamNo": 49 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 9 }
             },
             {
@@ -430,7 +430,7 @@
               "label": "Pitch MG Intensity Mod by AT",
               "sysexOutParamVal": { "type": "single", "ParamNo": 86 },
               "dumpParamVal": { "type": "single", "ParamNo": 47 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -439,7 +439,7 @@
               "label": "Pitch MG Intensity Mod by Wheel",
               "sysexOutParamVal": { "type": "single", "ParamNo": 87 },
               "dumpParamVal": { "type": "single", "ParamNo": 48 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             }
           ]
@@ -454,7 +454,7 @@
               "enabled": true,
               "sysexOutParamVal": { "type": "single", "ParamNo": 31 },
               "dumpParamVal": { "type": "single", "ParamNo": 50 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -463,7 +463,7 @@
               "label": "EG Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 32 },
               "dumpParamVal": { "type": "single", "ParamNo": 53 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -472,7 +472,7 @@
               "label": "Color Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 33 },
               "dumpParamVal": { "type": "single", "ParamNo": 83 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -481,7 +481,7 @@
               "label": "Color Intensity by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 34 },
               "dumpParamVal": { "type": "single", "ParamNo": 84 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -490,7 +490,7 @@
               "label": "EG Attack Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 35 },
               "dumpParamVal": { "type": "single", "ParamNo": 57 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -499,7 +499,7 @@
               "label": "EG Attack Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 36 },
               "dumpParamVal": { "type": "single", "ParamNo": 58 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -508,7 +508,7 @@
               "label": "EG Decay Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 37 },
               "dumpParamVal": { "type": "single", "ParamNo": 59 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -517,7 +517,7 @@
               "label": "EG Break Point",
               "sysexOutParamVal": { "type": "single", "ParamNo": 38 },
               "dumpParamVal": { "type": "single", "ParamNo": 60 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -526,7 +526,7 @@
               "label": "EG Slope Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 39 },
               "dumpParamVal": { "type": "single", "ParamNo": 61 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -535,7 +535,7 @@
               "label": "EG Sustain Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 40 },
               "dumpParamVal": { "type": "single", "ParamNo": 62 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -544,7 +544,7 @@
               "label": "EG Release Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 41 },
               "dumpParamVal": { "type": "single", "ParamNo": 63 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -553,7 +553,7 @@
               "label": "EG Release Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 42 },
               "dumpParamVal": { "type": "single", "ParamNo": 64 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -562,7 +562,7 @@
               "label": "EG Intensity by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 43 },
               "dumpParamVal": { "type": "single", "ParamNo": 56 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -571,7 +571,7 @@
               "label": "EG Time by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 44 },
               "dumpParamVal": { "type": "single", "ParamNo": 55 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -588,7 +588,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -611,7 +611,7 @@
                   { "value": 5, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -634,7 +634,7 @@
                   { "value": 6, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -657,7 +657,7 @@
                   { "value": 7, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -672,7 +672,7 @@
               "label": "Keyboard Track Key",
               "sysexOutParamVal": { "type": "single", "ParamNo": 49 },
               "dumpParamVal": { "type": "single", "ParamNo": 51 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "midiNoteVals" }
             },
             {
@@ -686,7 +686,7 @@
                 "bitStart": 0,
                 "bitEnd": 1
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": 0, "label": "Off" },
@@ -702,7 +702,7 @@
               "label": "Keyboard Track Cutoff",
               "sysexOutParamVal": { "type": "single", "ParamNo": 51 },
               "dumpParamVal": { "type": "single", "ParamNo": 52 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -711,7 +711,7 @@
               "label": "Keyboard Track EG Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 52 },
               "dumpParamVal": { "type": "single", "ParamNo": 54 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -728,7 +728,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -751,7 +751,7 @@
                   { "value": 5, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -774,7 +774,7 @@
                   { "value": 6, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -797,7 +797,7 @@
                   { "value": 7, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -818,7 +818,7 @@
               "label": "EG Attack Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 57 },
               "dumpParamVal": { "type": "single", "ParamNo": 71 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -827,7 +827,7 @@
               "label": "EG Attack Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 58 },
               "dumpParamVal": { "type": "single", "ParamNo": 72 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -836,7 +836,7 @@
               "label": "EG Decay Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 59 },
               "dumpParamVal": { "type": "single", "ParamNo": 73 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -845,7 +845,7 @@
               "label": "EG Break Point",
               "sysexOutParamVal": { "type": "single", "ParamNo": 60 },
               "dumpParamVal": { "type": "single", "ParamNo": 74 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -854,7 +854,7 @@
               "label": "EG Slope Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 61 },
               "dumpParamVal": { "type": "single", "ParamNo": 75 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -863,7 +863,7 @@
               "label": "EG Sustain Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 62 },
               "dumpParamVal": { "type": "single", "ParamNo": 76 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -872,7 +872,7 @@
               "label": "EG Release Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 63 },
               "dumpParamVal": { "type": "single", "ParamNo": 77 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -881,7 +881,7 @@
               "label": "EG Intensity by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 64 },
               "dumpParamVal": { "type": "single", "ParamNo": 68 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -890,7 +890,7 @@
               "label": "EG Time by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 65 },
               "dumpParamVal": { "type": "single", "ParamNo": 70 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -907,7 +907,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -930,7 +930,7 @@
                   { "value": 5, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -953,7 +953,7 @@
                   { "value": 6, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -976,7 +976,7 @@
                   { "value": 7, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -991,7 +991,7 @@
               "label": "Keyboard Track Key",
               "sysexOutParamVal": { "type": "single", "ParamNo": 70 },
               "dumpParamVal": { "type": "single", "ParamNo": 66 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "midiNoteVals" }
             },
             {
@@ -1005,7 +1005,7 @@
                 "bitStart": 4,
                 "bitEnd": 5
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": 0, "label": "Off" },
@@ -1021,7 +1021,7 @@
               "label": "Keyboard Track Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 72 },
               "dumpParamVal": { "type": "single", "ParamNo": 67 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1030,7 +1030,7 @@
               "label": "Keyboard Track EG Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 73 },
               "dumpParamVal": { "type": "single", "ParamNo": 69 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1047,7 +1047,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1070,7 +1070,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1093,7 +1093,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1116,7 +1116,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1143,7 +1143,7 @@
               "label": "Interval",
               "sysexOutParamVal": { "type": "single", "ParamNo": 88 },
               "dumpParamVal": { "type": "single", "ParamNo": 18 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -12, "valueTo": 12 }
             },
             {
@@ -1152,7 +1152,7 @@
               "label": "Detune",
               "sysexOutParamVal": { "type": "single", "ParamNo": 89 },
               "dumpParamVal": { "type": "single", "ParamNo": 19 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -50, "valueTo": 50 }
             },
             {
@@ -1161,7 +1161,7 @@
               "label": "Delay Start",
               "sysexOutParamVal": { "type": "single", "ParamNo": 90 },
               "dumpParamVal": { "type": "single", "ParamNo": 20 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1170,7 +1170,7 @@
               "label": "Multisound Waveform",
               "sysexOutParamVal": { "type": "single", "ParamNo": 91 },
               "dumpParamVal": { "type": "double", "ParamNo": 15 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "multisoundNames" }
             },
             {
@@ -1179,7 +1179,7 @@
               "label": "Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 92 },
               "dumpParamVal": { "type": "single", "ParamNo": 112 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1188,7 +1188,7 @@
               "label": "Octave",
               "sysexOutParamVal": { "type": "single", "ParamNo": 93 },
               "dumpParamVal": { "type": "single", "ParamNo": 17 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -2, "label": "32'" },
@@ -1204,7 +1204,7 @@
               "label": "Pitch EG Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 94 },
               "dumpParamVal": { "type": "single", "ParamNo": 87 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1213,7 +1213,7 @@
               "label": "A B Pan",
               "sysexOutParamVal": { "type": "single", "ParamNo": 95 },
               "dumpParamVal": { "type": "single", "ParamNo": 133 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "prgPanValues" }
             },
             {
@@ -1227,7 +1227,7 @@
                 "bitEnd": 7,
                 "ParamNo": 129
               },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 9 }
             },
             {
@@ -1241,7 +1241,7 @@
                 "bitEnd": 3,
                 "ParamNo": 129
               },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 9 }
             },
             {
@@ -1255,7 +1255,7 @@
                 "bitStart": 0,
                 "bitEnd": 2
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "mgWaveforms" }
             },
             {
@@ -1264,7 +1264,7 @@
               "label": "Pitch MG Frequency",
               "sysexOutParamVal": { "type": "single", "ParamNo": 146 },
               "dumpParamVal": { "type": "single", "ParamNo": 89 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1272,7 +1272,7 @@
               "enabled": true,
               "label": "Pitch MG Intensity",
               "dumpParamVal": { "type": "single", "ParamNo": 92 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1281,7 +1281,7 @@
               "label": "Pitch MG Delay",
               "sysexOutParamVal": { "type": "single", "ParamNo": 148 },
               "dumpParamVal": { "type": "single", "ParamNo": 90 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1290,7 +1290,7 @@
               "label": "Pitch MG Fade In",
               "sysexOutParamVal": { "type": "single", "ParamNo": 149 },
               "dumpParamVal": { "type": "single", "ParamNo": 91 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1303,7 +1303,7 @@
                 "ParamNo": 88,
                 "bitNo": 7
               },
-              "inputType": "select",
+              "inputType": "boolean",
               "inputSettings": {
                 "values": [
                   { "value": 0, "label": "Off" },
@@ -1317,7 +1317,7 @@
               "label": "Pitch MG Mod. By Kbd. Track",
               "sysexOutParamVal": { "type": "single", "ParamNo": 151 },
               "dumpParamVal": { "type": "single", "ParamNo": 93 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1326,7 +1326,7 @@
               "label": "Pitch MG Frequency Mod. By AT M. Wheel",
               "sysexOutParamVal": { "type": "single", "ParamNo": 152 },
               "dumpParamVal": { "type": "single", "ParamNo": 96 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 9 }
             },
             {
@@ -1335,7 +1335,7 @@
               "label": "Pitch MG Intensity Mod by AT",
               "sysexOutParamVal": { "type": "single", "ParamNo": 153 },
               "dumpParamVal": { "type": "single", "ParamNo": 94 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1344,7 +1344,7 @@
               "label": "Pitch MG Intensity Mod by Wheel",
               "sysexOutParamVal": { "type": "single", "ParamNo": 154 },
               "dumpParamVal": { "type": "single", "ParamNo": 95 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             }
           ]
@@ -1359,7 +1359,7 @@
               "enabled": true,
               "sysexOutParamVal": { "type": "single", "ParamNo": 98 },
               "dumpParamVal": { "type": "single", "ParamNo": 97 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1368,7 +1368,7 @@
               "label": "EG Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 99 },
               "dumpParamVal": { "type": "single", "ParamNo": 100 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1377,7 +1377,7 @@
               "label": "Color Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 100 },
               "dumpParamVal": { "type": "single", "ParamNo": 130 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1386,7 +1386,7 @@
               "label": "Color Intensity by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 101 },
               "dumpParamVal": { "type": "single", "ParamNo": 131 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1395,7 +1395,7 @@
               "label": "EG Attack Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 102 },
               "dumpParamVal": { "type": "single", "ParamNo": 104 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1404,7 +1404,7 @@
               "label": "EG Attack Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 103 },
               "dumpParamVal": { "type": "single", "ParamNo": 105 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1413,7 +1413,7 @@
               "label": "EG Decay Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 104 },
               "dumpParamVal": { "type": "single", "ParamNo": 106 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1422,7 +1422,7 @@
               "label": "EG Break Point",
               "sysexOutParamVal": { "type": "single", "ParamNo": 105 },
               "dumpParamVal": { "type": "single", "ParamNo": 107 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1431,7 +1431,7 @@
               "label": "EG Slope Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 106 },
               "dumpParamVal": { "type": "single", "ParamNo": 108 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1440,7 +1440,7 @@
               "label": "EG Sustain Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 107 },
               "dumpParamVal": { "type": "single", "ParamNo": 109 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1449,7 +1449,7 @@
               "label": "EG Release Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 108 },
               "dumpParamVal": { "type": "single", "ParamNo": 110 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1458,7 +1458,7 @@
               "label": "EG Release Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 109 },
               "dumpParamVal": { "type": "single", "ParamNo": 111 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1467,7 +1467,7 @@
               "label": "EG Intensity by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 110 },
               "dumpParamVal": { "type": "single", "ParamNo": 103 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1476,7 +1476,7 @@
               "label": "EG Time by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 111 },
               "dumpParamVal": { "type": "single", "ParamNo": 102 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1493,7 +1493,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1516,7 +1516,7 @@
                   { "value": 5, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1539,7 +1539,7 @@
                   { "value": 6, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1562,7 +1562,7 @@
                   { "value": 7, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1577,7 +1577,7 @@
               "label": "Keyboard Track Key",
               "sysexOutParamVal": { "type": "single", "ParamNo": 116 },
               "dumpParamVal": { "type": "single", "ParamNo": 98 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "midiNoteVals" }
             },
             {
@@ -1591,7 +1591,7 @@
                 "bitStart": 0,
                 "bitEnd": 1
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": 0, "label": "Off" },
@@ -1607,7 +1607,7 @@
               "label": "Keyboard Track Cutoff",
               "sysexOutParamVal": { "type": "single", "ParamNo": 118 },
               "dumpParamVal": { "type": "single", "ParamNo": 99 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1616,7 +1616,7 @@
               "label": "Keyboard Track EG Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 119 },
               "dumpParamVal": { "type": "single", "ParamNo": 101 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1632,7 +1632,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1655,7 +1655,7 @@
                   { "value": 5, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1678,7 +1678,7 @@
                   { "value": 6, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1701,7 +1701,7 @@
                   { "value": 7, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1722,7 +1722,7 @@
               "label": "EG Attack Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 124 },
               "dumpParamVal": { "type": "single", "ParamNo": 118 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1731,7 +1731,7 @@
               "label": "EG Attack Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 125 },
               "dumpParamVal": { "type": "single", "ParamNo": 119 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1740,7 +1740,7 @@
               "label": "EG Decay Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 126 },
               "dumpParamVal": { "type": "single", "ParamNo": 120 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1749,7 +1749,7 @@
               "label": "EG Break Point",
               "sysexOutParamVal": { "type": "single", "ParamNo": 127 },
               "dumpParamVal": { "type": "single", "ParamNo": 121 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1758,7 +1758,7 @@
               "label": "EG Slope Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 128 },
               "dumpParamVal": { "type": "single", "ParamNo": 122 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1767,7 +1767,7 @@
               "label": "EG Sustain Level",
               "sysexOutParamVal": { "type": "single", "ParamNo": 129 },
               "dumpParamVal": { "type": "single", "ParamNo": 123 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1776,7 +1776,7 @@
               "label": "EG Release Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 130 },
               "dumpParamVal": { "type": "single", "ParamNo": 124 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1785,7 +1785,7 @@
               "label": "EG Intensity by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 131 },
               "dumpParamVal": { "type": "single", "ParamNo": 115 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1794,7 +1794,7 @@
               "label": "EG Time by Velocity Sense",
               "sysexOutParamVal": { "type": "single", "ParamNo": 132 },
               "dumpParamVal": { "type": "single", "ParamNo": 117 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1811,7 +1811,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1834,7 +1834,7 @@
                   { "value": 5, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1857,7 +1857,7 @@
                   { "value": 6, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1880,7 +1880,7 @@
                   { "value": 7, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1895,7 +1895,7 @@
               "label": "Keyboard Track Key",
               "sysexOutParamVal": { "type": "single", "ParamNo": 137 },
               "dumpParamVal": { "type": "single", "ParamNo": 113 },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": { "valuesConstant": "midiNoteVals" }
             },
             {
@@ -1909,7 +1909,7 @@
                 "bitStart": 4,
                 "bitEnd": 5
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": 0, "label": "Off" },
@@ -1925,7 +1925,7 @@
               "label": "Keyboard Track Intensity",
               "sysexOutParamVal": { "type": "single", "ParamNo": 139 },
               "dumpParamVal": { "type": "single", "ParamNo": 114 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": -99, "valueTo": 99 }
             },
             {
@@ -1934,7 +1934,7 @@
               "label": "Keyboard Track EG Time",
               "sysexOutParamVal": { "type": "single", "ParamNo": 140 },
               "dumpParamVal": { "type": "single", "ParamNo": 116 },
-              "inputType": "slider",
+              "inputType": "number",
               "inputSettings": { "valueFrom": 0, "valueTo": 99 }
             },
             {
@@ -1951,7 +1951,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1974,7 +1974,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -1997,7 +1997,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -2020,7 +2020,7 @@
                   { "value": 4, "name": "pol" }
                 ]
               },
-              "inputType": "select",
+              "inputType": "list",
               "inputSettings": {
                 "values": [
                   { "value": -1, "label": "-" },
@@ -2043,7 +2043,7 @@
           "enabled": true,
           "sysexOutParamVal": { "type": "single", "ParamNo": 155 },
           "dumpParamVal": { "type": "single", "ParamNo": 135 },
-          "inputType": "select",
+          "inputType": "list",
           "inputSettings": { "valuesConstant": "effectTypes" }
         }
       ]
