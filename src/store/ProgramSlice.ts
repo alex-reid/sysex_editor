@@ -24,13 +24,15 @@ export interface ProgramParameterJson {
     }[];
   };
   inputType: "select" | "slider" | "label";
-  values?: {
-    value: number | string;
-    label: string;
-  }[];
-  valuesConstant?: string;
-  valueFrom?: number;
-  valueTo?: number;
+  inputSettings?: {
+    values?: {
+      value: number | string;
+      label: string;
+    }[];
+    valuesConstant?: string;
+    valueFrom?: number;
+    valueTo?: number;
+  };
   defaultParameterValue?: number;
   children?: ProgramParameterJson[];
 }
@@ -117,8 +119,12 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
         active: false,
         parameterValue: parameter.defaultParameterValue || 0,
       };
-      if (p.inputType === "select" && p.valuesConstant) {
-        p.values = constants[p.valuesConstant];
+      if (
+        p.inputType === "select" &&
+        p.inputSettings &&
+        p.inputSettings.valuesConstant
+      ) {
+        p.inputSettings.values = constants[p.inputSettings?.valuesConstant];
       }
       if (parameter.enabled)
         set((state) => ({

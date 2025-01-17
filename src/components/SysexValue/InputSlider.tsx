@@ -54,8 +54,8 @@ const InputSlider = ({
       <label>
         <ExtendedInput
           type="range"
-          min={params.valueFrom}
-          max={params.valueTo}
+          min={params.inputSettings!.valueFrom}
+          max={params.inputSettings!.valueTo}
           onChange={handleSliderChange}
           value={params.parameterValue}
           orient="vertical"

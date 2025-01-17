@@ -57,8 +57,8 @@ const InputKnob = ({
     <Knob
       valueRaw={params?.parameterValue || params?.defaultParameterValue || 0}
       setValueRaw={handleValueChange}
-      valueMin={params?.valueFrom || 0}
-      valueMax={params?.valueTo || 99}
+      valueMin={params.inputSettings!.valueFrom || 0}
+      valueMax={params.inputSettings!.valueTo || 99}
       tooltip={params?.name || ""}
       label={params?.label || ""}
     />

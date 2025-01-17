@@ -44,15 +44,16 @@ const SelectDropdown = ({
   return (
     <div>
       <label>
-        {params.values && params.values.length > 0 && (
-          <select onChange={handleSelectChange} value={params.parameterValue}>
-            {params.values.map(({ value: val, label }) => (
-              <option key={val} value={val}>
-                {label}
-              </option>
-            ))}
-          </select>
-        )}
+        {params.inputSettings!.values &&
+          params.inputSettings!.values.length > 0 && (
+            <select onChange={handleSelectChange} value={params.parameterValue}>
+              {params.inputSettings!.values.map(({ value: val, label }) => (
+                <option key={val} value={val}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          )}
         <br />
         {params.label}
       </label>
