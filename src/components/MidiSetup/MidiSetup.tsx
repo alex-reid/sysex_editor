@@ -14,7 +14,7 @@ export function MidiSetup() {
   return (
     <div>
       Midi options:
-      <label>
+      <label style={{ display: "inline-block", padding: "0 1rem" }}>
         Input:
         <select
           onChange={(e) => handleInputChange(e.target.value)}
@@ -29,7 +29,7 @@ export function MidiSetup() {
             ))}
         </select>
       </label>
-      <label>
+      <label style={{ display: "inline-block", padding: "0 1rem" }}>
         Output:
         <select
           onChange={(e) => handleOutputChange(e.target.value)}

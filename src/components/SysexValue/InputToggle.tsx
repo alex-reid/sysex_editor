@@ -38,12 +38,14 @@ const InputToggle = ({
   return (
     <div>
       <label>
+        {params.label}
+        <br />
+        <br />
         <input
           type="checkbox"
           checked={params.parameterValue === 1}
           onChange={handleCheckboxChange}
         />
-        {params.label}
       </label>
     </div>
   );

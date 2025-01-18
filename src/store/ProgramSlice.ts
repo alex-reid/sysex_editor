@@ -32,6 +32,7 @@ export interface ProgramParameterJson {
     valuesConstant?: string;
     valueFrom?: number;
     valueTo?: number;
+    valueStep?: number;
   };
   defaultParameterValue?: number;
   children?: ProgramParameterJson[];

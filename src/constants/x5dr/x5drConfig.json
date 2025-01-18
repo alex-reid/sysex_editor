@@ -322,7 +322,7 @@
                 "ParamNo": 82
               },
               "inputType": "number",
-              "inputSettings": { "valueFrom": 0, "valueTo": 9 }
+              "inputSettings": { "valueFrom": 0, "valueTo": 9, "valueStep": 1 }
             },
             {
               "name": "SEND_D_LEVEL",
@@ -336,7 +336,7 @@
                 "ParamNo": 82
               },
               "inputType": "number",
-              "inputSettings": { "valueFrom": 0, "valueTo": 9 }
+              "inputSettings": { "valueFrom": 0, "valueTo": 9, "valueStep": 1 }
             },
             {
               "name": "PITCH_MG_WAVE_FORM",
@@ -1228,7 +1228,7 @@
                 "ParamNo": 129
               },
               "inputType": "number",
-              "inputSettings": { "valueFrom": 0, "valueTo": 9 }
+              "inputSettings": { "valueFrom": 0, "valueTo": 9, "valueStep": 1 }
             },
             {
               "name": "SEND_D_LEVEL",
@@ -1242,7 +1242,7 @@
                 "ParamNo": 129
               },
               "inputType": "number",
-              "inputSettings": { "valueFrom": 0, "valueTo": 9 }
+              "inputSettings": { "valueFrom": 0, "valueTo": 9, "valueStep": 1 }
             },
             {
               "name": "PITCH_MG_WAVE_FORM",

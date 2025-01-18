@@ -38,6 +38,9 @@ const SelectDropdown = ({
   return (
     <div>
       <label>
+        {params.label}
+        <br />
+        <br />
         {params.inputSettings!.values &&
           params.inputSettings!.values.length > 0 && (
             <select onChange={handleSelectChange} value={params.parameterValue}>
@@ -48,8 +51,6 @@ const SelectDropdown = ({
               ))}
             </select>
           )}
-        <br />
-        {params.label}
       </label>
     </div>
   );
