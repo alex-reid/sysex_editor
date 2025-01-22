@@ -2,7 +2,7 @@ import { memo, useCallback, useRef } from "react";
 import { useWebMidi } from "../../contexts/webmidi";
 import { paramChangeSysexMessage } from "../../utils/converters";
 import useStore from "../../store/store";
-import Knob from "../widgets/Knob";
+import Knob from "../widgets/Knob/Knob";
 
 const InputKnob = ({
   functionCode,

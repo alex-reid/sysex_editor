@@ -34,6 +34,10 @@ export interface ProgramParameterJson {
     valueTo?: number;
     valueStep?: number;
   };
+  conditional?: {
+    parameterName: string;
+    value: number;
+  };
   defaultParameterValue?: number;
   children?: ProgramParameterJson[];
 }
@@ -63,6 +67,7 @@ export interface ProgramSlice {
   setAllParametersActive: (active: boolean) => void;
   setProgramParameterSysexDump: (dump: number[]) => void;
   getParameterList: () => { id: number; inputType: string; enabled: boolean }[];
+  getParameterByName: (name: string) => ProgramParameters | undefined;
 }
 
 export const createProgramSlice: StateCreator<ProgramSlice, []> = (
@@ -136,6 +141,9 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
   },
   getParameterById: (id: number) => {
     return get().programParameters.find((p) => p.id === id);
+  },
+  getParameterByName: (name: string) => {
+    return get().programParameters.find((p) => p.name === name);
   },
   setParameterValue: (id: number, value: number) => {
     set((state) => {

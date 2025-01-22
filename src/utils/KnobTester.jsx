@@ -1,5 +1,5 @@
 import { FUNCTION_CODE_SEND } from "../constants/x5dr";
-import Knob from "../components/widgets/Knob";
+import Knob from "../components/widgets/Knob/Knob";
 import { useCallback, useState } from "react";
 import useStore from "../store/store";
 import InputSlider from "../components/SysexValue/InputSlider";

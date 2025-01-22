@@ -5,12 +5,13 @@ import SysyexValue from "./components/SysexValue/SysexValue";
 import { FUNCTION_CODE_SEND } from "./constants/x5dr";
 import DumpRequest from "./components/SysexValue/DumpRequest";
 import Zustand from "./components/zustand/Zustand";
+import { EnvelopeTester } from "./components/widgets/Envelope/Envelope";
 
 function App() {
   return (
     <WebMidiProvider>
       <MidiSetup />
-      {/* <KnobTester /> */}
+      <EnvelopeTester bipolar={true} />
       <SysyexValue
         functionCode={FUNCTION_CODE_SEND.MODE_REQUEST}
         data={[]}

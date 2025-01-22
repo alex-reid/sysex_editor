@@ -1,0 +1,14 @@
+:root{
+  --line-color: rgb(100, 190, 255);
+}
+
+.envelope{
+  width: 225px;
+  height: 100px;
+} 
+.background {
+  fill: #1a1a1a;
+}
+.lines {
+  stroke: var(--line-color);
+}
