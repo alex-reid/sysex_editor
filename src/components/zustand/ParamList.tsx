@@ -38,21 +38,21 @@ export const ParamInput = ({
     case "number":
       return (
         <InputKnobMemo
-          id={parameter.id}
+          name={parameter.name}
           functionCode={programConfig?.functionCode || 0}
         />
       );
     case "boolean":
       return (
         <InputToggle
-          id={parameter.id}
+          name={parameter.name}
           functionCode={programConfig?.functionCode || 0}
         />
       );
     case "list":
       return (
         <SelectDropdown
-          id={parameter.id}
+          name={parameter.name}
           functionCode={programConfig?.functionCode || 0}
         />
       );

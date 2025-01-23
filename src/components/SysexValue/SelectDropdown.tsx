@@ -4,21 +4,21 @@ import useStore from "../../store/store";
 
 const SelectDropdown = ({
   functionCode,
-  id,
+  name,
 }: {
   functionCode: number;
-  id: number;
+  name: string;
 }) => {
   const { sendSysexMessage } = useWebMidi();
-  const { getParameterById, setParameterValue } = useStore((state) => state);
-  const params = getParameterById(id);
+  const { setParameterValue } = useStore((state) => state);
+  const params = useStore((state) => state.getParameterByName(name));
 
   if (!params) {
     return null;
   }
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setParameterValue(id, parseInt(e.target.value, 10));
+    setParameterValue(params.id, parseInt(e.target.value, 10));
 
     sendSysexMessage(
       functionCode,

@@ -6,17 +6,15 @@ import Knob from "../widgets/Knob/Knob";
 
 const InputKnob = ({
   functionCode,
-  id,
+  name,
 }: {
   functionCode: number;
-  id: number;
+  name: string;
 }) => {
   const { sendSysexMessage } = useWebMidi();
   const timeoutRef = useRef(setTimeout(() => {}, 0));
   const setParameterValue = useStore((state) => state.setParameterValue);
-  const params = useStore((state) =>
-    state.programParameters.find((p) => p.id === id)
-  );
+  const params = useStore((state) => state.getParameterByName(name));
   // console.log(id + " rerender");
 
   const handleValueChange = useCallback(
@@ -28,7 +26,7 @@ const InputKnob = ({
       clearTimeout(timeoutRef.current);
 
       if (params.active) {
-        setParameterValue(id, value);
+        setParameterValue(params.id, value);
         timeoutRef.current = setTimeout(() => {
           sendSysexMessage(
             functionCode,
@@ -46,7 +44,7 @@ const InputKnob = ({
         }, 30);
       }
     },
-    [params, setParameterValue, id, functionCode, sendSysexMessage]
+    [params, setParameterValue, functionCode, sendSysexMessage]
   );
 
   if (!params) {

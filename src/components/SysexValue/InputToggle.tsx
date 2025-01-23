@@ -4,21 +4,21 @@ import useStore from "../../store/store";
 
 const InputToggle = ({
   functionCode,
-  id,
+  name,
 }: {
   functionCode: number;
-  id: number;
+  name: string;
 }) => {
   const { sendSysexMessage } = useWebMidi();
-  const { getParameterById, setParameterValue } = useStore((state) => state);
-  const params = getParameterById(id);
+  const { setParameterValue } = useStore((state) => state);
+  const params = useStore((state) => state.getParameterByName(name));
 
   if (!params) {
     return null;
   }
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setParameterValue(id, e.target.checked ? 1 : 0);
+    setParameterValue(params.id, e.target.checked ? 1 : 0);
 
     sendSysexMessage(
       functionCode,

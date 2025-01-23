@@ -5,17 +5,15 @@ import useStore from "../../store/store";
 
 const InputSlider = ({
   functionCode,
-  id,
+  name,
 }: {
   functionCode: number;
-  id: number;
+  name: string;
 }) => {
   const { sendSysexMessage } = useWebMidi();
   const timeoutRef = useRef(setTimeout(() => {}, 0));
   const setParameterValue = useStore((state) => state.setParameterValue);
-  const params = useStore((state) =>
-    state.programParameters.find((p) => p.id === id)
-  );
+  const params = useStore((state) => state.getParameterByName(name));
 
   if (!params) {
     return null;
@@ -28,7 +26,7 @@ const InputSlider = ({
 
     clearTimeout(timeoutRef.current);
 
-    setParameterValue(id, parseInt(e.target.value, 10));
+    setParameterValue(params.id, parseInt(e.target.value, 10));
 
     if (params.active) {
       timeoutRef.current = setTimeout(() => {
