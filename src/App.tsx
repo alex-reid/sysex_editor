@@ -5,13 +5,22 @@ import SysyexValue from "./components/SysexValue/SysexValue";
 import { FUNCTION_CODE_SEND } from "./constants/x5dr";
 import DumpRequest from "./components/SysexValue/DumpRequest";
 import Zustand from "./components/zustand/Zustand";
-import { EnvelopeTester } from "./components/widgets/Envelope/Envelope";
+// import EnvWithIDs from "./components/widgets/Envelope/EnvWithIDs";
 
 function App() {
   return (
     <WebMidiProvider>
       <MidiSetup />
-      <EnvelopeTester bipolar={true} />
+      {/* <EnvWithIDs
+        attackTimeID={48}
+        attackLevelID={49}
+        decayTimeID={50}
+        breakPointLevelID={51}
+        slopeTimeID={52}
+        sustainLevelID={53}
+        releaseTimeID={54}
+        releaseLevelID={55}
+      /> */}
       <SysyexValue
         functionCode={FUNCTION_CODE_SEND.MODE_REQUEST}
         data={[]}

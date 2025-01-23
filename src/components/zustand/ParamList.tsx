@@ -14,49 +14,61 @@ export function ParamList({
     <>
       {programParameters.map((parameter: ProgramParameters, key: number) => {
         if (parameter.enabled) {
-          switch (parameter.inputType) {
-            case "number":
-              return (
-                <InputKnobMemo
-                  id={parameter.id}
-                  key={key}
-                  functionCode={programConfig?.functionCode || 0}
-                />
-              );
-            case "boolean":
-              return (
-                <InputToggle
-                  id={parameter.id}
-                  key={key}
-                  functionCode={programConfig?.functionCode || 0}
-                />
-              );
-            case "list":
-              return (
-                <SelectDropdown
-                  id={parameter.id}
-                  key={key}
-                  functionCode={programConfig?.functionCode || 0}
-                />
-              );
-            case "label":
-              return (
-                <div
-                  key={key}
-                  style={{
-                    width: "100%",
-                    gridColumnStart: 1,
-                    gridColumnEnd: -1,
-                  }}
-                >
-                  <h4>{parameter.label}</h4>
-                </div>
-              );
-            default:
-              return null;
-          }
+          return (
+            <ParamInput
+              key={key}
+              parameter={parameter}
+              programConfig={programConfig}
+            />
+          );
         }
       })}
     </>
   );
 }
+
+export const ParamInput = ({
+  parameter,
+  programConfig,
+}: {
+  parameter: ProgramParameters;
+  programConfig: ProgramConfig;
+}) => {
+  switch (parameter.inputType) {
+    case "number":
+      return (
+        <InputKnobMemo
+          id={parameter.id}
+          functionCode={programConfig?.functionCode || 0}
+        />
+      );
+    case "boolean":
+      return (
+        <InputToggle
+          id={parameter.id}
+          functionCode={programConfig?.functionCode || 0}
+        />
+      );
+    case "list":
+      return (
+        <SelectDropdown
+          id={parameter.id}
+          functionCode={programConfig?.functionCode || 0}
+        />
+      );
+    case "label":
+      return (
+        <div
+          style={{
+            width: "100%",
+            gridColumnStart: 1,
+            gridColumnEnd: -1,
+          }}
+        >
+          <h4>{parameter.label}</h4>
+        </div>
+      );
+    default:
+      return null;
+  }
+};

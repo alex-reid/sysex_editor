@@ -164,7 +164,7 @@ const EnvelopeADHSR = ({
   return (
     <div>
       <svg
-        viewBox="0 0 450 200"
+        viewBox="-1 -1 452 202"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={classes.envelope}

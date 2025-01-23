@@ -68,6 +68,10 @@ export interface ProgramSlice {
   setProgramParameterSysexDump: (dump: number[]) => void;
   getParameterList: () => { id: number; inputType: string; enabled: boolean }[];
   getParameterByName: (name: string) => ProgramParameters | undefined;
+  getParameterValueByID: (id: number) => number;
+  getParameterValueByName: (name: string) => number;
+  getParameterIDByName: (name: string) => number | undefined;
+  getParameterNameByID: (id: number) => string | undefined;
 }
 
 export const createProgramSlice: StateCreator<ProgramSlice, []> = (
@@ -223,6 +227,22 @@ export const createProgramSlice: StateCreator<ProgramSlice, []> = (
       inputType: p.inputType,
       enabled: p.enabled,
     }));
+  },
+  getParameterValueByID: (id: number) => {
+    const p = get().programParameters.find((p) => p.id === id);
+    return p ? p.parameterValue : 0;
+  },
+  getParameterValueByName: (name: string) => {
+    const p = get().programParameters.find((p) => p.name === name);
+    return p ? p.parameterValue : 0;
+  },
+  getParameterIDByName: (name: string) => {
+    const p = get().programParameters.find((p) => p.name === name);
+    return p ? p.id : undefined;
+  },
+  getParameterNameByID: (id: number) => {
+    const p = get().programParameters.find((p) => p.id === id);
+    return p ? p.name : undefined;
   },
 });
 

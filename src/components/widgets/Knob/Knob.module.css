@@ -25,9 +25,12 @@
   transition: background-color 0.1s;
   z-index: 0;
 }
-.container:focus, .container:focus-visible {
+.container:focus, .container:focus-visible, .container:hover {
   outline: none;
   background-color: rgba(26, 26, 26, 1);
+}
+.container:hover{
+  cursor: pointer;
 }
 
 .thumb {

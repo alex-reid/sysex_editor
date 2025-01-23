@@ -59,7 +59,7 @@ const InputKnob = ({
       setValueRaw={handleValueChange}
       valueMin={params.inputSettings!.valueFrom || 0}
       valueMax={params.inputSettings!.valueTo || 99}
-      tooltip={params?.name || ""}
+      tooltip={params?.name + " " + params?.id || ""}
       label={params?.label || ""}
     />
   );
