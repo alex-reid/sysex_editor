@@ -2,6 +2,7 @@ import { ProgramParameters, ProgramConfig } from "../../store/ProgramSlice";
 import InputKnobMemo from "../SysexValue/InputKnob";
 import InputToggle from "../SysexValue/InputToggle";
 import SelectDropdown from "../SysexValue/SelectDropdown";
+import { InputLabel } from "../SysexValue/InputLabel";
 
 export function ParamList({
   programParameters,
@@ -17,7 +18,8 @@ export function ParamList({
           return (
             <ParamInput
               key={key}
-              parameter={parameter}
+              name={parameter.name}
+              type={parameter.inputType}
               programConfig={programConfig}
             />
           );
@@ -28,46 +30,43 @@ export function ParamList({
 }
 
 export const ParamInput = ({
-  parameter,
   programConfig,
+  type,
+  name,
+  label,
 }: {
-  parameter: ProgramParameters;
   programConfig: ProgramConfig;
+  type: ProgramParameters["inputType"];
+  name: ProgramParameters["name"];
+  label?: string;
 }) => {
-  switch (parameter.inputType) {
+  switch (type) {
     case "number":
       return (
         <InputKnobMemo
-          name={parameter.name}
+          label={label}
+          name={name}
           functionCode={programConfig?.functionCode || 0}
         />
       );
     case "boolean":
       return (
         <InputToggle
-          name={parameter.name}
+          label={label}
+          name={name}
           functionCode={programConfig?.functionCode || 0}
         />
       );
     case "list":
       return (
         <SelectDropdown
-          name={parameter.name}
+          label={label}
+          name={name}
           functionCode={programConfig?.functionCode || 0}
         />
       );
     case "label":
-      return (
-        <div
-          style={{
-            width: "100%",
-            gridColumnStart: 1,
-            gridColumnEnd: -1,
-          }}
-        >
-          <h4>{parameter.label}</h4>
-        </div>
-      );
+      return <InputLabel name={name}></InputLabel>;
     default:
       return null;
   }

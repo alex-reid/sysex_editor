@@ -5,9 +5,11 @@ import useStore from "../../store/store";
 const InputToggle = ({
   functionCode,
   name,
+  label,
 }: {
   functionCode: number;
   name: string;
+  label?: string;
 }) => {
   const { sendSysexMessage } = useWebMidi();
   const { setParameterValue } = useStore((state) => state);
@@ -38,7 +40,7 @@ const InputToggle = ({
   return (
     <div>
       <label>
-        {params.label}
+        {label || params?.label || ""}
         <br />
         <br />
         <input

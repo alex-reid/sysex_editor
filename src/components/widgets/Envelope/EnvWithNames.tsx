@@ -9,6 +9,7 @@ interface EnvWithNamesProps {
   breakPointLevelName: string;
   sustainLevelName: string;
   releaseLevelName: string;
+  bipolar: boolean;
 }
 const EnvWithNames = ({
   attackTimeName,
@@ -19,6 +20,7 @@ const EnvWithNames = ({
   breakPointLevelName,
   sustainLevelName,
   releaseLevelName,
+  bipolar,
 }: EnvWithNamesProps) => {
   const attackTime = useStore((state) =>
     state.getParameterValueByName(attackTimeName)
@@ -46,7 +48,7 @@ const EnvWithNames = ({
   );
   return (
     <EnvelopeADHSR
-      bipolar={true}
+      bipolar={bipolar}
       attackTime={(attackTime || 0) * 0.01}
       decayTime={(decayTime || 0) * 0.01}
       slopeTime={(slopeTime || 0) * 0.01}

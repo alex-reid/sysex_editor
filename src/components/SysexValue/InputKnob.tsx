@@ -7,9 +7,11 @@ import Knob from "../widgets/Knob/Knob";
 const InputKnob = ({
   functionCode,
   name,
+  label,
 }: {
   functionCode: number;
   name: string;
+  label?: string;
 }) => {
   const { sendSysexMessage } = useWebMidi();
   const timeoutRef = useRef(setTimeout(() => {}, 0));
@@ -58,7 +60,7 @@ const InputKnob = ({
       valueMin={params.inputSettings!.valueFrom || 0}
       valueMax={params.inputSettings!.valueTo || 99}
       tooltip={params?.name + " " + params?.id || ""}
-      label={params?.label || ""}
+      label={label || params?.label || ""}
     />
   );
 };

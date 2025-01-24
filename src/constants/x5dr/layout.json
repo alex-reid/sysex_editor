@@ -1,0 +1,558 @@
+[
+  {
+    "tabName": "Basic",
+    "tabContent": [
+      {
+        "type": "section",
+        "sectionName": "OSC",
+        "x": 1,
+        "y": 1,
+        "width": 10,
+        "height": 2
+      },
+      {
+        "type": "list",
+        "name": "OSC_MODE",
+        "label": "Mode",
+        "x": 1,
+        "y": 1,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "type": "list",
+        "name": "ASSIGN",
+        "label": "Poly/Mono",
+        "x": 1,
+        "y": 2,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "type": "list",
+        "name": "VOICE_1_OSC_MULTISOUND",
+        "label": "OSC 1 MultiSound",
+        "x": 2,
+        "y": 1,
+        "width": 2,
+        "height": 1
+      },
+      {
+        "type": "list",
+        "name": "VOICE_2_OSC_MULTISOUND",
+        "label": "OSC 2 MultiSound",
+        "x": 2,
+        "y": 2,
+        "width": 2,
+        "height": 1
+      },
+      {
+        "type": "list",
+        "name": "VOICE_1_OSC_OCTAVE",
+        "label": "OSC 1 Octave",
+        "x": 4,
+        "y": 1,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "type": "list",
+        "name": "VOICE_2_OSC_OCTAVE",
+        "label": "OSC 2 Octave",
+        "x": 4,
+        "y": 2,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_OSC_LEVEL",
+        "label": "OSC 1 Level",
+        "x": 5,
+        "y": 1,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "list",
+        "name": "VOICE_1_OSC_A_B_PAN",
+        "label": "OSC 1 Pan",
+        "x": 6,
+        "y": 1,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_OSC_LEVEL",
+        "label": "OSC 2 Level",
+        "x": 7,
+        "y": 1,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "list",
+        "name": "VOICE_2_OSC_A_B_PAN",
+        "label": "OSC 2 Pan",
+        "x": 8,
+        "y": 1,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_OSC_INTERVAL",
+        "label": "OSC 2 Interval",
+        "x": 9,
+        "y": 1,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_OSC_DETUNE",
+        "label": "OSC 2 Detune",
+        "x": 10,
+        "y": 1,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "section",
+        "sectionName": "OSC 1 VDF",
+        "x": 1,
+        "y": 3,
+        "width": 6,
+        "height": 4
+      },
+      {
+        "type": "envelope",
+        "nameParams": {
+          "bipolar": true,
+          "attackTimeName": "VOICE_1_VDF_EG_ATTACK_TIME",
+          "decayTimeName": "VOICE_1_VDF_EG_DECAY_TIME",
+          "breakPointLevelName": "VOICE_1_VDF_EG_BREAK_POINT",
+          "slopeTimeName": "VOICE_1_VDF_EG_SLOPE_TIME",
+          "sustainLevelName": "VOICE_1_VDF_EG_SUSTAIN_LEVEL",
+          "releaseTimeName": "VOICE_1_VDF_EG_RELEASE_TIME",
+          "attackLevelName": "VOICE_1_VDF_EG_ATTACK_LEVEL",
+          "releaseLevelName": "VOICE_1_VDF_EG_RELEASE_LEVEL"
+        },
+        "x": 1,
+        "y": 3,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_CUTOFF_VALUE",
+        "x": 1,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_INTENSITY",
+        "x": 2,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_ATTACK_TIME",
+        "label": "Attack Time",
+        "x": 3,
+        "y": 3,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_ATTACK_LEVEL",
+        "label": "Attack Level",
+        "x": 3,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_DECAY_TIME",
+        "label": "Decay Time",
+        "x": 4,
+        "y": 3,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_BREAK_POINT",
+        "label": "Break Point",
+        "x": 4,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_SLOPE_TIME",
+        "label": "Slope Time",
+        "x": 5,
+        "y": 3,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_SUSTAIN_LEVEL",
+        "label": "Sustain Level",
+        "x": 5,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_RELEASE_TIME",
+        "label": "Release Time",
+        "x": 6,
+        "y": 3,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDF_EG_RELEASE_LEVEL",
+        "label": "Release Level",
+        "x": 6,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "section",
+        "sectionName": "OSC 1 VDA",
+        "x": 7,
+        "y": 3,
+        "width": 6,
+        "height": 4
+      },
+      {
+        "type": "envelope",
+        "nameParams": {
+          "bipolar": false,
+          "attackTimeName": "VOICE_1_VDA_EG_ATTACK_TIME",
+          "decayTimeName": "VOICE_1_VDA_EG_DECAY_TIME",
+          "breakPointLevelName": "VOICE_1_VDA_EG_BREAK_POINT",
+          "slopeTimeName": "VOICE_1_VDA_EG_SLOPE_TIME",
+          "sustainLevelName": "VOICE_1_VDA_EG_SUSTAIN_LEVEL",
+          "releaseTimeName": "VOICE_1_VDA_EG_RELEASE_TIME",
+          "attackLevelName": "VOICE_1_VDA_EG_ATTACK_LEVEL"
+        },
+        "x": 7,
+        "y": 3,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDA_EG_EG_INT_BY_VEL_SENSE",
+        "x": 7,
+        "y": 5,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDA_EG_ATTACK_TIME",
+        "label": "Attack Time",
+        "x": 9,
+        "y": 3,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDA_EG_ATTACK_LEVEL",
+        "label": "Attack Level",
+        "x": 9,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDA_EG_DECAY_TIME",
+        "label": "Decay Time",
+        "x": 10,
+        "y": 3,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDA_EG_BREAK_POINT",
+        "label": "Break Point",
+        "x": 10,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDA_EG_SLOPE_TIME",
+        "label": "Slope Time",
+        "x": 11,
+        "y": 3,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDA_EG_SUSTAIN_LEVEL",
+        "label": "Sustain Level",
+        "x": 11,
+        "y": 5,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_1_VDA_EG_RELEASE_TIME",
+        "label": "Release Time",
+        "x": 12,
+        "y": 3,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "section",
+        "sectionName": "OSC 2 VDF",
+        "x": 1,
+        "y": 7,
+        "width": 6,
+        "height": 4
+      },
+      {
+        "type": "envelope",
+        "nameParams": {
+          "bipolar": true,
+          "attackTimeName": "VOICE_2_VDF_EG_ATTACK_TIME",
+          "decayTimeName": "VOICE_2_VDF_EG_DECAY_TIME",
+          "breakPointLevelName": "VOICE_2_VDF_EG_BREAK_POINT",
+          "slopeTimeName": "VOICE_2_VDF_EG_SLOPE_TIME",
+          "sustainLevelName": "VOICE_2_VDF_EG_SUSTAIN_LEVEL",
+          "releaseTimeName": "VOICE_2_VDF_EG_RELEASE_TIME",
+          "attackLevelName": "VOICE_2_VDF_EG_ATTACK_LEVEL",
+          "releaseLevelName": "VOICE_2_VDF_EG_RELEASE_LEVEL"
+        },
+        "x": 1,
+        "y": 7,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_CUTOFF_VALUE",
+        "x": 1,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_INTENSITY",
+        "x": 2,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_ATTACK_TIME",
+        "label": "Attack Time",
+        "x": 3,
+        "y": 7,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_ATTACK_LEVEL",
+        "label": "Attack Level",
+        "x": 3,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_DECAY_TIME",
+        "label": "Decay Time",
+        "x": 4,
+        "y": 7,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_BREAK_POINT",
+        "label": "Break Point",
+        "x": 4,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_SLOPE_TIME",
+        "label": "Slope Time",
+        "x": 5,
+        "y": 7,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_SUSTAIN_LEVEL",
+        "label": "Sustain Level",
+        "x": 5,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_RELEASE_TIME",
+        "label": "Release Time",
+        "x": 6,
+        "y": 7,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDF_EG_RELEASE_LEVEL",
+        "label": "Release Level",
+        "x": 6,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "section",
+        "sectionName": "OSC 2 VDA",
+        "x": 7,
+        "y": 7,
+        "width": 6,
+        "height": 4
+      },
+      {
+        "type": "envelope",
+        "nameParams": {
+          "bipolar": false,
+          "attackTimeName": "VOICE_2_VDA_EG_ATTACK_TIME",
+          "decayTimeName": "VOICE_2_VDA_EG_DECAY_TIME",
+          "breakPointLevelName": "VOICE_2_VDA_EG_BREAK_POINT",
+          "slopeTimeName": "VOICE_2_VDA_EG_SLOPE_TIME",
+          "sustainLevelName": "VOICE_2_VDA_EG_SUSTAIN_LEVEL",
+          "releaseTimeName": "VOICE_2_VDA_EG_RELEASE_TIME",
+          "attackLevelName": "VOICE_2_VDA_EG_ATTACK_LEVEL"
+        },
+        "x": 7,
+        "y": 7,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDA_EG_EG_INT_BY_VEL_SENSE",
+        "x": 7,
+        "y": 9,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDA_EG_ATTACK_TIME",
+        "label": "Attack Time",
+        "x": 9,
+        "y": 7,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDA_EG_ATTACK_LEVEL",
+        "label": "Attack Level",
+        "x": 9,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDA_EG_DECAY_TIME",
+        "label": "Decay Time",
+        "x": 10,
+        "y": 7,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDA_EG_BREAK_POINT",
+        "label": "Break Point",
+        "x": 10,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDA_EG_SLOPE_TIME",
+        "label": "Slope Time",
+        "x": 11,
+        "y": 7,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDA_EG_SUSTAIN_LEVEL",
+        "label": "Sustain Level",
+        "x": 11,
+        "y": 9,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "type": "number",
+        "name": "VOICE_2_VDA_EG_RELEASE_TIME",
+        "label": "Release Time",
+        "x": 12,
+        "y": 7,
+        "width": 1,
+        "height": 2
+      }
+    ]
+  },
+  {
+    "tabName": "Oscillator"
+  },
+  {
+    "tabName": "Filter"
+  },
+  {
+    "tabName": "Amplifier"
+  },
+  {
+    "tabName": "Effect"
+  },
+  {
+    "tabName": "Master"
+  }
+]

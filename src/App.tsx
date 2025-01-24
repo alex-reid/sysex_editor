@@ -5,6 +5,7 @@ import SysyexValue from "./components/SysexValue/SysexValue";
 import { FUNCTION_CODE_SEND } from "./constants/x5dr";
 import DumpRequest from "./components/SysexValue/DumpRequest";
 import Zustand from "./components/zustand/Zustand";
+import Layout from "./components/Layout/Layout";
 // import EnvWithNames from "./components/widgets/Envelope/EnvWithNames";
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         receiveCode={FUNCTION_CODE_SEND.PROGRAM_PARAMETER_DUMP}
         label="Parameter Dump Request"
       />
+      <Layout />
       <Zustand />
     </WebMidiProvider>
   );

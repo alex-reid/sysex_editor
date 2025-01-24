@@ -36,7 +36,7 @@ const Zustand = () => {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
-          gap: "1rem",
+          gap: "2rem 1rem",
         }}
       >
         <ProgramParams />
