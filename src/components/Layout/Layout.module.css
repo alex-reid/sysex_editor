@@ -27,10 +27,12 @@
 
 .layoutGrid {
   position: relative;
-  width: 1280px;
+  width: 100%;
+  min-width: 1024px;
+  max-width: 1368px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap:24px;
+  gap:24px 24px;
   padding: 10px 0px;
   margin: 10px;
   margin-bottom: 3rem;

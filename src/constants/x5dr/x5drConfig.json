@@ -143,16 +143,18 @@
       "enabled": true,
       "label": "Cutoff Modulation Generator Intensity",
       "sysexOutParamVal": { "type": "single", "ParamNo": 13 },
-      "dumpParamVal": { "type": "single", "ParamNo": 31 },
+      "dumpParamVal": { "type": "single", "ParamNo": 32 },
       "inputType": "number",
       "inputSettings": { "valueFrom": 0, "valueTo": 99 }
     },
     {
       "name": "CUTOFF_MG_DELAY",
-      "enabled": false,
-      "label": "",
+      "enabled": true,
+      "label": "Cutoff Modulation Generator Delay",
       "sysexOutParamVal": { "type": "single", "ParamNo": 14 },
-      "dumpParamVal": { "type": "single", "ParamNo": 0 }
+      "dumpParamVal": { "type": "single", "ParamNo": 31 },
+      "inputType": "number",
+      "inputSettings": { "valueFrom": 0, "valueTo": 99 }
     },
     {
       "name": "CUTOFF_MG_OSC_SELECT",
@@ -230,7 +232,7 @@
       "enabled": true,
       "label": "VDF Mod. Gen. Intensity",
       "sysexOutParamVal": { "type": "single", "ParamNo": 21 },
-      "dumpParamVal": { "type": "single", "ParamNo": 0 }
+      "dumpParamVal": { "type": "single", "ParamNo": 39 }
     },
     {
       "name": "BW_MW_PITCH_BEND_RANGE",

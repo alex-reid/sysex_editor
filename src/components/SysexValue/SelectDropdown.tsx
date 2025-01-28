@@ -47,7 +47,9 @@ const SelectDropdown = ({
         height: "100%",
       }}
     >
-      <label>{label || params?.label || ""}</label>
+      <label style={{ marginBottom: "0.5rem" }}>
+        {label || params?.label || ""}
+      </label>
       {params.inputSettings!.values &&
         params.inputSettings!.values.length > 0 && (
           <select onChange={handleSelectChange} value={params.parameterValue}>

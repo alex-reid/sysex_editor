@@ -6,6 +6,7 @@ import { FUNCTION_CODE_SEND } from "./constants/x5dr";
 import DumpRequest from "./components/SysexValue/DumpRequest";
 import Zustand from "./components/zustand/Zustand";
 import Layout from "./components/Layout/Layout";
+import DumpCompare from "./utils/DumpCompare";
 // import EnvWithNames from "./components/widgets/Envelope/EnvWithNames";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         sustainLevelName="VOICE_2_VDF_EG_SUSTAIN_LEVEL"
         releaseLevelName="VOICE_2_VDF_EG_RELEASE_LEVEL"
       /> */}
+      <DumpCompare />
       <SysyexValue
         functionCode={FUNCTION_CODE_SEND.MODE_REQUEST}
         data={[]}
